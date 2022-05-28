@@ -36,7 +36,7 @@
                 <button class="dropbtn">Chamados</button>
                 <div class="dropdowncontent">
                     <a href="?router=Pagina/aberturaChamado/">Abrir Chamado</a>
-                    <a href="/src/html/pagina-consulta-chamados.html">Consultar</a>
+                    <a href="?router=Pagina/consultaChamado/">Consultar</a>
                 </div>
             </div>
 			<div class="item-navegacao dropdown">

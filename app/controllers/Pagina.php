@@ -33,4 +33,9 @@ class Pagina
     {
         require_once __DIR__ . '/../views/chamados/abertura-chamado.php';
     }
+
+    public function consultaChamado()
+    {
+        require_once __DIR__ . '/../views/chamados/consulta-chamados.php';
+    }
 }

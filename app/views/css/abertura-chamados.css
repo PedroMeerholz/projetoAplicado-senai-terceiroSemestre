@@ -1,0 +1,66 @@
+h1 {
+    font-weight: bolder;
+    font-size: 25px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+}
+
+.box-principal {
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 3px;
+    padding: 30px;
+}
+
+.box-secundario {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    border-collapse: collapse;
+    width: 45%;
+}
+
+.tabela-funcionario td{
+    width: 30%;
+}
+
+.tabela-veiculo td {
+    width: 25%;
+}
+
+thead {
+    background-color: rgb(187, 186, 186);
+    font-weight: bolder;
+}
+
+tr:nth-child(2n) {
+    background-color: #6ab7ee;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+
+.botao-operacao {
+    margin-top: 30px;
+    width: 45%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #308cca;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+.botao-operacao:hover {
+    background-color: #004a81;
+    transition: 1s;
+}

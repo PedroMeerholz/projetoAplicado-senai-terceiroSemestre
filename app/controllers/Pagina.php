@@ -28,4 +28,9 @@ class Pagina
     {
         require_once __DIR__ . '/../views/veiculos/consulta-veiculos.php';
     }
+
+    public function aberturaChamado()
+    {
+        require_once __DIR__ . '/../views/chamados/abertura-chamado.php';
+    }
 }

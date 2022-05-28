@@ -18,4 +18,9 @@ class Pagina
     {
         require_once __DIR__ . '/../views/funcionarios/consulta-funcionario.php';
     }
+
+    public function cadastroVeiculo()
+    {
+        require_once __DIR__ . '/../views/veiculos/cadastro-veiculo.php';
+    }
 }

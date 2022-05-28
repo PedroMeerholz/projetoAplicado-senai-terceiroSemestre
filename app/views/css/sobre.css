@@ -1,0 +1,64 @@
+#divisao-superior {
+    display: flex;
+    justify-content: space-between;
+}
+
+#informacoes {
+    overflow: hidden;
+    height: 90vh;
+    padding-bottom: 2%;
+    box-sizing: border-box;
+}
+
+#informacoes:hover {
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.detalhes {
+    width: 90%;
+    background-color: #e0e0e0;
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 5%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 25px;
+    margin: 0px;
+}
+
+#pegada-de-carbono {
+    margin-bottom: 2%;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+#lista-funcionalidades {
+    list-style: circle;
+}
+
+.item-lista-funcionalidade {
+    margin-left: 5%;
+}
+
+.link-externo {
+    font-weight: bolder;
+    text-decoration: underline;
+    color: #186ba6;
+}
+
+#fonte {
+    font-style: italic;
+    text-decoration: underline;
+}

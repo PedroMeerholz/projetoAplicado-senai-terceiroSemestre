@@ -1,0 +1,93 @@
+body {
+    font-family: 'Kanit', sans-serif;
+}
+
+#barra-navegacao {
+    background-color: #186ba6;
+    height: 10vh;
+}
+
+#barra-navegacao h1 {
+    font-weight: bolder;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 2%;
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+    
+    position: absolute;
+    
+    left: 10%;
+    bottom: 92%;
+}
+
+.formulario-login {
+    box-sizing: border-box;
+    
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-left:5%;
+
+    padding: 2%;
+    
+    height: 50vh;
+    width: 25vw;
+    
+    border-radius: 3px;
+    
+    background-color: #e0e0e0;
+}
+
+.login {
+    padding-top: 3%;
+    text-align: center;
+}
+
+.login input {
+    display: inline-block;
+    width: 20%;
+    margin-bottom: 20px;
+}
+
+.inputs-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.input-row {
+    display: flex;
+}
+
+.inputs-login input {
+    width: 100%;
+}
+
+.label {
+    margin-right: 5px;
+}
+
+.botao-operacao {
+    margin-right: 20px;
+    width: 30%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #308cca;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+.botao-operacao:hover {
+    background-color: #004a81;
+    transition: 1s;
+}

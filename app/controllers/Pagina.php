@@ -4,6 +4,11 @@ namespace app\controllers;
 
 class Pagina
 {
+    public function login()
+    {
+        require_once __DIR__ . '/../views/login.php';
+    }
+
     public function home()
     {
         require_once __DIR__ . '/../views/home.php';

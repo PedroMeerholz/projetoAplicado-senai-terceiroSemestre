@@ -5,7 +5,7 @@ namespace core;
 class GerenciadorDeRotas
 {
     private $controller = 'Pagina';
-    private $metodo = 'home';
+    private $metodo = 'login';
     private $parametro = [];
 
     public function __construct()

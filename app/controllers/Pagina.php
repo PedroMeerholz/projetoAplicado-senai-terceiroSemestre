@@ -38,4 +38,9 @@ class Pagina
     {
         require_once __DIR__ . '/../views/chamados/consulta-chamados.php';
     }
+
+    public function geraRelatorio()
+    {
+        require_once __DIR__ . '/../views/relatorio.php';
+    }
 }

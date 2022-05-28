@@ -1,0 +1,45 @@
+h1 {
+    font-weight: bolder;
+    font-size: 25px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+}
+
+.gera-relatorio {
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 3px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.gera-relatorio input {
+    margin-bottom: 20px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.botao-operacao {
+    margin-bottom: 30px;
+    width: 30%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #308cca;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+.botao-operacao:hover {
+    background-color: #004a81;
+    transition: 1s;
+}

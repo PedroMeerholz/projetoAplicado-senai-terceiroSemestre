@@ -1,0 +1,52 @@
+h1 {
+    font-weight: bolder;
+    font-size: 25px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+}
+
+.box-principal {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: left;
+    border-radius: 3px;
+    background-color: #e0e0e0;
+}
+
+.box-secundario {
+    padding: 30px;
+}
+
+.botao-operacao {
+    margin-right: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #308cca;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+.botao-operacao:hover {
+    background-color: #004a81;
+    transition: 1s;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    background-color: rgb(187, 186, 186);
+    font-weight: bolder;
+}
+
+tr:nth-child(2n) {
+    background-color: #6ab7ee;
+}

@@ -13,4 +13,9 @@ class Pagina
     {
         require_once __DIR__ . '/../views/cadastro-funcionario.php';
     }
+
+    public function consultaFuncionario()
+    {
+        require_once __DIR__ . '/../views/consulta-funcionario.php';
+    }
 }

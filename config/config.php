@@ -51,12 +51,6 @@
                     <a href="?router=Pagina/contato/">Contato</a>
                 </div>
             </div>
-            <div class="item-navegacao dropdown">
-                <button class="dropbtn">Sobre</button>
-                <div class="dropdowncontent">
-                    <a href="/src/html/pagina-sobre.html">Sobre</a>
-                </div>
-            </div>
         </div>
     </nav>
 </body>

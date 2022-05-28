@@ -23,4 +23,9 @@ class Pagina
     {
         require_once __DIR__ . '/../views/veiculos/cadastro-veiculo.php';
     }
+
+    public function consultaVeiculo()
+    {
+        require_once __DIR__ . '/../views/veiculos/consulta-veiculos.php';
+    }
 }

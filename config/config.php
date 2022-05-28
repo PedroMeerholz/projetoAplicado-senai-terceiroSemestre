@@ -5,14 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMEC - Home</title>
+    <link rel="stylesheet" href="./app/views/css/reset.css">
+    <link rel="stylesheet" href="./app/views/css/generico.css">
+    <link rel="stylesheet" href="./app/views/css/home.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <a href="?router=Pagina/home">Home</a>
-            <a href="?router=Pagina/cadastro/">Cadastro</a>
-            <a href="?router=Pagina/consulta/">Consulta</a>
-        </ul>
+    <nav id="barra-navegacao">
+        <div class="conteudo-navegacao">
+            <div class="item-navegacao dropdown">
+                <button class="dropbtn">Home</button>
+                <div class="dropdowncontent">
+                    <a href="?router=Pagina/home/">Informações Gerais</a>
+                </div>
+            </div>
+            <div class="item-navegacao dropdown">
+                <button class="dropbtn">Funcionários</button>
+                <div class="dropdowncontent">
+                    <a href="/src/html/pagina-cadastro-funcionarios.html">Cadastrar</a>
+                    <a href="/src/html/pagina-consulta-funcionarios.html">Consultar</a>
+                </div>
+            </div>
+            <div class="item-navegacao dropdown">
+                <button class="dropbtn">Veículos</button>
+                <div class="dropdowncontent">
+                    <a href="/src/html/pagina-cadastro-veiculos.html">Cadastrar</a>
+                    <a href="/src/html/pagina-consulta-veiculos.html">Consultar</a>
+                </div>
+            </div>
+            <div class="item-navegacao dropdown">
+                <button class="dropbtn">Chamados</button>
+                <div class="dropdowncontent">
+                    <a href="/src/html/pagina-abertura-chamados.html">Abrir Chamado</a>
+                    <a href="/src/html/pagina-consulta-chamados.html">Consultar</a>
+                </div>
+            </div>
+			<div class="item-navegacao dropdown">
+				<button class="dropbtn">Relatórios</button>
+				<div class="dropdowncontent">
+					<a href="/src/html/pagina-relatorios.html">Gerar Relatório</a>
+				</div>
+			</div>
+            <div class="item-navegacao dropdown">
+                <button class="dropbtn">Contato</button>
+                <div class="dropdowncontent">
+                    <a href="/src/html/pagina-contato.html">Contato</a>
+                </div>
+            </div>
+            <div class="item-navegacao dropdown">
+                <button class="dropbtn">Sobre</button>
+                <div class="dropdowncontent">
+                    <a href="/src/html/pagina-sobre.html">Sobre</a>
+                </div>
+            </div>
+        </div>
     </nav>
 </body>
 </html>

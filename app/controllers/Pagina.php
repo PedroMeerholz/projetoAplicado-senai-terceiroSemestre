@@ -43,4 +43,9 @@ class Pagina
     {
         require_once __DIR__ . '/../views/relatorio.php';
     }
+
+    public function contato()
+    {
+        require_once __DIR__ . '/../views/contato.php';
+    }
 }

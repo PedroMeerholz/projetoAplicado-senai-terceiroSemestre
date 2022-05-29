@@ -2,7 +2,9 @@
 
 namespace app\controllers;
 
-class Pagina
+use app\models\Crud;
+
+class Pagina extends Crud
 {
     public function login()
     {
@@ -17,6 +19,12 @@ class Pagina
     public function cadastroFuncionario()
     {
         require_once __DIR__ . '/../views/funcionarios/cadastro-funcionario.php';
+    }
+
+    public function registrarFuncionario()
+    {
+        $registrar = $this->createFuncionario();
+        $this->cadastroFuncionario();
     }
 
     public function consultaFuncionario()

@@ -35,8 +35,8 @@
 			<label for="entradaStatusFuncionario">Status:</label>
 			<select name="entradaStatusFuncionario" id="entradaStatusFuncionario">
 				<option value="" selected disabled></option>
-				<option value="Disponível">Disponível</option>
-				<option value="Indisponível">Indisponível</option>
+				<option value="1">Disponível</option>
+				<option value="2">Indisponível</option>
 			</select>
 			<br>
 			<div class="botoes">

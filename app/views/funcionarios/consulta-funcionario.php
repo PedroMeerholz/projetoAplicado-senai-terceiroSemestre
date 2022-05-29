@@ -21,7 +21,8 @@
                         <td>Nascimento</td>
                         <td>Cargo</td>
                         <td>Status</td>
-                        <td>Ações</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody class="conteudo-tabela-consulta">
@@ -32,8 +33,8 @@
                             <td><?php echo $registro['nascimento']?></td>
                             <td><?php echo $registro['cargo']?></td>
                             <td><?php echo $registro['status_funcionario']?></td>
-                            <td><a href="?router=Pagina/editaFuncionario/&id=<?php echo base64_encode($registro['id_funcionario']);?>">Editar</a></td>
-                            <td><a href="?router=Pagina/deletaFuncionario/&id=<?php echo base64_encode($registro['id_funcionario']);?>&nome=<?php echo base64_encode($registro['nome'])?>">Remover</a></td>
+                            <td><a class="acoes-consulta" href="?router=Pagina/editaFuncionario/&id=<?php echo base64_encode($registro['id_funcionario']);?>">Editar</a></td>
+                            <td><a class="acoes-consulta" href="?router=Pagina/deletaFuncionario/&id=<?php echo base64_encode($registro['id_funcionario']);?>&nome=<?php echo base64_encode($registro['nome'])?>">Remover</a></td>
                         </tr>
                     <?php endforeach;?>
                 </tbody>

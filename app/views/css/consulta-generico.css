@@ -40,6 +40,7 @@ h1 {
 table {
     border-collapse: collapse;
     width: 100%;
+    border: 1px black solid;
 }
 
 thead {
@@ -48,5 +49,18 @@ thead {
 }
 
 tr:nth-child(2n) {
-    background-color: #6ab7ee;
+    background-color: rgb(247, 242, 242);
+}
+
+.acoes-consulta {
+    text-decoration: none; 
+    color: black;  
+}
+
+.acoes-consulta:hover {
+    text-decoration: underline;
+}
+
+td {
+    padding: 1%;
 }

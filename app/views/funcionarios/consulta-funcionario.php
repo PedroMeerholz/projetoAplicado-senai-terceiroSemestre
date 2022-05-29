@@ -32,8 +32,8 @@
                             <td><?php echo $registro['nascimento']?></td>
                             <td><?php echo $registro['cargo']?></td>
                             <td><?php echo $registro['status_funcionario']?></td>
-                            <td><a href="">Editar</a></td>
-                            <td><a href="">Remover</a></td>
+                            <td><a href="?router=Pagina/editaFuncionario/&id=<?php echo base64_encode($registro['id_funcionario']);?>">Editar</a></td>
+                            <td><a href="?router=Pagina/deletaFuncionario/&id=<?php echo base64_encode($registro['id_funcionario']);?>">Remover</a></td>
                         </tr>
                     <?php endforeach;?>
                 </tbody>

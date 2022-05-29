@@ -25,4 +25,16 @@ class Crud extends Conexao
 
         return $stmt;
     }
+
+    public function readFuncionario()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT * FROM funcionario;';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll();
+        return $resultado;
+    }
 }

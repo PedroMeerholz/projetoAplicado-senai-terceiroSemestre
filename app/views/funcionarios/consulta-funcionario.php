@@ -13,7 +13,6 @@
     <h1>Consulta de Funcionários</h1>
     <div class="box-principal">
         <div class="box-secundario">
-            <input type="submit" value="Realizar Consulta" class="botao-operacao">
             <table class="tabela-consulta">
                 <thead class="cabecalho-tabela-consulta">
                     <tr class="linha-cabecalho-tabela-consulta">
@@ -22,23 +21,21 @@
                         <td>Nascimento</td>
                         <td>Cargo</td>
                         <td>Status</td>
+                        <td>Ações</td>
                     </tr>
                 </thead>
                 <tbody class="conteudo-tabela-consulta">
-                    <tr>
-                        <td>Pedro Vinícius Meerholz</td>
-                        <td>12345678910</td>
-                        <td>2003</td>
-                        <td>Motorista</td>
-                        <td>Disponível</td>
-                    </tr>
-                    <tr>
-                        <td>João Silva</td>
-                        <td>12345678910</td>
-                        <td>2002</td>
-                        <td>Motorista</td>
-                        <td>Disponível</td>
-                    </tr>
+                    <?php foreach($consulta as $registro):?>
+                        <tr>
+                            <td><?php echo $registro['nome']?></td>
+                            <td><?php echo $registro['cpf']?></td>
+                            <td><?php echo $registro['nascimento']?></td>
+                            <td><?php echo $registro['cargo']?></td>
+                            <td><?php echo $registro['status_funcionario']?></td>
+                            <td><a href="">Editar</a></td>
+                            <td><a href="">Remover</a></td>
+                        </tr>
+                    <?php endforeach;?>
                 </tbody>
             </table>
         </div>

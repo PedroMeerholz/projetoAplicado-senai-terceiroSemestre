@@ -23,13 +23,19 @@ class Pagina extends Crud
 
     public function registrarFuncionario()
     {
-        $registrar = $this->createFuncionario();
+        $registra = $this->createFuncionario();
         $this->cadastroFuncionario();
     }
 
     public function consultaFuncionario()
     {
+        $consulta = $this->readFuncionario();
         require_once __DIR__ . '/../views/funcionarios/consulta-funcionario.php';
+    }
+
+    public function consultaFuncionarioRegistrado()
+    {
+        $consulta = $this->readFuncionario();
     }
 
     public function cadastroVeiculo()

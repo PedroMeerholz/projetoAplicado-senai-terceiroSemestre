@@ -29,7 +29,10 @@ class Crud extends Conexao
     public function readFuncionario()
     {
         $conexao = $this->realizaConexao();
-        $sql = 'SELECT * FROM funcionario;';
+        $sql = 'SELECT id_funcionario, nome, cpf, nascimento, cargo.nomenclatura as cargo, status.nomenclatura as status_funcionario
+        from funcionario 
+        inner join cargo on cargo.id_cargo = funcionario.cargo 
+        inner join status on status.id_status = funcionario.status_funcionario';
 
         $stmt = $conexao->prepare($sql);
         $stmt->execute();

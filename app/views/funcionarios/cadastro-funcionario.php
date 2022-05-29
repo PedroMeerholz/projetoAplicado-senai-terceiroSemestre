@@ -12,25 +12,24 @@
 <body>
 <h1>Cadastro de Funcionários</h1>
 	<div class="formulario-cadastro-funcionario">
-		<form class="cadastro-funcionario" >
-			<label for="entradaNomeUsuario">Nome Completo:</label>
-			<input type="text" name="entradaNomeUsuario" id="entradaNomeUsuario" placeholder="João da Silva" autofocus required>
+		<form action="?router=Pagina/registrarFuncionario/" method="post" class="cadastro-funcionario" >
+			<label for="entradaNomeFuncionario">Nome Completo:</label>
+			<input type="text" name="entradaNomeFuncionario" id="entradaNomeFuncionario" placeholder="João da Silva" autofocus required>
 			<br>
-			<label for="entradaCpfUsuario">CPF:</label>
-			<input type="number" name="entradaCpfUsuario" id="entradaCpfUsuario" minlength="11" maxlength="11" placeholder="12345678910" required>
+			<label for="entradaCpfFuncionario">CPF:</label>
+			<input type="number" name="entradaCpfFuncionario" id="entradaCpfFuncionario" minlength="11" maxlength="11" placeholder="12345678910" required>
 			<br>
-			<label for="entradaNascimentoUsuario">Nascimento:</label>
-			<input type="date" name="entradaNascimentoUsuario" id="entradaNascimentoUsuario" placeholder="13//11/2003" required>
+			<label for="entradaNascimentoFuncionario">Nascimento:</label>
+			<input type="date" name="entradaNascimentoFuncionario" id="entradaNascimentoFuncionario" placeholder="13//11/2003" required>
 			<br>
-			<label for="entradaCargoUsuario">Cargo:</label>
-			<select name="entradaCargoUsuario" id="entradaCargoFuncionario">
+			<label for="entradaCargoFuncionario">Cargo:</label>
+			<select name="entradaCargoFuncionario" id="entradaCargoFuncionario">
 				<option value="" selected disabled></option>
-				<option value="Administrador de Redes">Administrador de Redes</option>
-				<option value="Diretor">Diretor</option>
-				<option value="Gerente">Gerente</option>
-				<option value="Motorista">Motorista</option>
-				<option value="Técnico de Infraestrutura">Técnico de Infraestrutura</option>
-				<option value="Técnico em Redes">Técnico em Redes</option>
+				<option value="1">Motorista</option>
+				<option value="2">Gerente</option>
+				<option value="3">Diretor</option>
+				<option value="4">Técnico</option>
+				<option value="5">Estagiário</option>
 			</select>
 			<br>
 			<label for="entradaStatusFuncionario">Status:</label>
@@ -46,7 +45,5 @@
 			</div>
 		</form>
 	</div>
-	<script type="module" src="/src/js/funcionarios/validacao-cadastro-funcionario.js"></script>
-	<script type="module" src="/src/js/funcionarios/confirmacao-dados.js"></script>
 </body>
 </html>

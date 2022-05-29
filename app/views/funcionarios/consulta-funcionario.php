@@ -33,7 +33,7 @@
                             <td><?php echo $registro['cargo']?></td>
                             <td><?php echo $registro['status_funcionario']?></td>
                             <td><a href="?router=Pagina/editaFuncionario/&id=<?php echo base64_encode($registro['id_funcionario']);?>">Editar</a></td>
-                            <td><a href="?router=Pagina/deletaFuncionario/&id=<?php echo base64_encode($registro['id_funcionario']);?>">Remover</a></td>
+                            <td><a href="?router=Pagina/deletaFuncionario/&id=<?php echo base64_encode($registro['id_funcionario']);?>&nome=<?php echo base64_encode($registro['nome'])?>">Remover</a></td>
                         </tr>
                     <?php endforeach;?>
                 </tbody>

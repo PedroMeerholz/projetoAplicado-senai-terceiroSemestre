@@ -1,0 +1,48 @@
+h1 {
+    font-weight: bolder;
+    font-size: 25px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+}
+
+.formulario-cadastro-funcionario h2 {
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.formulario-cadastro-funcionario {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #e0e0e0;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.botao-operacao {
+    width: 30%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    background-color: #308cca;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+.botao-operacao:hover {
+    background-color: #004a81;
+    transition: 1s;
+}

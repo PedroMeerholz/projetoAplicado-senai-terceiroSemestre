@@ -48,6 +48,7 @@ class Pagina extends Crud
     public function deletaFuncionario()
     {
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+        $nome = filter_input(INPUT_GET, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
         require_once __DIR__ . '/../views/funcionarios/deleta-funcionario.php';
     }
 

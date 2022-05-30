@@ -71,6 +71,7 @@ class Pagina extends Crud
 
     public function consultaVeiculo()
     {
+        $consulta = $this->readVeiculo();
         require_once __DIR__ . '/../views/veiculos/consulta-veiculos.php';
     }
 

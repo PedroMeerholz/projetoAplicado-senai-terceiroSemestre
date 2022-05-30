@@ -12,7 +12,7 @@
 <body>
 <h1>Cadastro de Veículos</h1>
 	<div class="formulario-cadastro-veiculo">
-		<form class="cadastro-veiculo">
+		<form action="?router=Pagina/registrarVeiculo/" method="post" class="cadastro-veiculo">
 			<label for="entradaPlacaVeiculo">Placa:</label>
 			<input type="text" name="entradaPlacaVeiculo" id="entradaPlacaVeiculo" placeholder="BRA3R52" autofocus required>
 			<br>
@@ -26,8 +26,11 @@
 			<select name="entradaModeloVeiculo" id="entradaModeloVeiculo" required>
 				<optgroup name="modelo">
 					<option value="" selected disabled></option>
-					<option value="Uno">Uno</option>
-					<option value="Fiesta">Fiesta</option>
+					<option value="1">Strada</option>
+					<option value="2">Fiorino</option>
+					<option value="3">Uno</option>
+					<option value="4">Pálio</option>
+					<option value="5">Logan</option>
 				</optgroup>
 			</select>
 			<br>
@@ -35,8 +38,8 @@
 			<select name="entradaStatusVeiculo" id="entradaStatusVeiculo" required>
 				<optgroup name="status">
 					<option value="" selected disabled></option>
-					<option value="Disponível">Disponível</option>
-					<option value="Indisponível">Indisponível</option>
+					<option value="1">Disponível</option>
+					<option value="2">Indisponível</option>
 				</optgroup>
 			</select>
 			<br>

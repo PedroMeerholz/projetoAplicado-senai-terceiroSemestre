@@ -63,6 +63,12 @@ class Pagina extends Crud
         require_once __DIR__ . '/../views/veiculos/cadastro-veiculo.php';
     }
 
+    public function registrarVeiculo()
+    {
+        $registra = $this->createVeiculo();
+        header('Location:?router=Pagina/cadastroVeiculo');
+    }
+
     public function consultaVeiculo()
     {
         require_once __DIR__ . '/../views/veiculos/consulta-veiculos.php';

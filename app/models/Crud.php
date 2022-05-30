@@ -99,4 +99,26 @@ class Crud extends Conexao
 
         return $stmt;
     }
+
+    public function createVeiculo()
+    {
+        $placa = filter_input(INPUT_POST, 'entradaPlacaVeiculo', FILTER_SANITIZE_SPECIAL_CHARS);
+        $ano = filter_input(INPUT_POST, 'entradaAnoVeiculo', FILTER_SANITIZE_SPECIAL_CHARS);
+        $autonomia = filter_input(INPUT_POST, 'entradaAutonomiaVeiculo', FILTER_SANITIZE_SPECIAL_CHARS);
+        $modelo = filter_input(INPUT_POST, 'entradaModeloVeiculo', FILTER_SANITIZE_SPECIAL_CHARS);
+        $status = filter_input(INPUT_POST, 'entradaStatusVeiculo', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $conexao = $this->realizaConexao();
+        $sql = 'INSERT INTO veiculo(placa, ano, autonomia, modelo, status_veiculo) values(?, ?, ?, ?, ?);';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $placa);
+        $stmt->bindValue(2, $ano);
+        $stmt->bindValue(3, $autonomia);
+        $stmt->bindValue(4, $modelo);
+        $stmt->bindValue(5, $status);
+        $stmt->execute();
+
+        return $stmt;
+    }
 }

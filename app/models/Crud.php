@@ -32,7 +32,7 @@ class Crud extends Conexao
         $sql = 'SELECT id_funcionario, nome, cpf, nascimento, cargo.nomenclatura as cargo, status.nomenclatura as status_funcionario
         from funcionario 
         inner join cargo on cargo.id_cargo = funcionario.cargo 
-        inner join status on status.id_status = funcionario.status_funcionario';
+        inner join status on status.id_status = funcionario.status_funcionario order by nome';
 
         $stmt = $conexao->prepare($sql);
         $stmt->execute();
@@ -41,11 +41,14 @@ class Crud extends Conexao
         return $resultado;
     }
 
-    public function readOnly()
+    public function readOnlyFuncionario()
     {
         $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
         $conexao = $this->realizaConexao();
-        $sql = 'SELECT * FROM funcionario WHERE id_funcionario=?';
+        $sql = 'SELECT id_funcionario, nome, cpf, nascimento, cargo.nomenclatura as cargo, status.nomenclatura as status_funcionario
+        from funcionario 
+        inner join cargo on cargo.id_cargo = funcionario.cargo 
+        inner join status on status.id_status = funcionario.status_funcionario where id_funcionario=?';
         
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(1, $id);

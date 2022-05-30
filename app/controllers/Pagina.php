@@ -15,7 +15,7 @@ class Pagina extends Crud
     {
         require_once __DIR__ . '/../views/home.php';
     }
-    
+
     public function cadastroFuncionario()
     {
         require_once __DIR__ . '/../views/funcionarios/cadastro-funcionario.php';
@@ -35,7 +35,7 @@ class Pagina extends Crud
 
     public function editaFuncionario()
     {
-        $edita = $this->readOnly();
+        $edita = $this->readOnlyFuncionario();
         require_once __DIR__ . '/../views/funcionarios/edita-funcionario.php';
     }
 

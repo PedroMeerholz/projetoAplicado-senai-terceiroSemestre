@@ -33,6 +33,7 @@
                     <option value="4">Técnico</option>
                     <option value="5">Estagiário</option>
                 </select>
+                Cargo Atual: <?php echo $registro['cargo']?>
                 <br>
                 <label for="entradaStatusFuncionario">Status:</label>
                 <select name="entradaStatusFuncionario" id="entradaStatusFuncionario">
@@ -40,6 +41,7 @@
                     <option value="1">Disponível</option>
                     <option value="2">Indisponível</option>
                 </select>
+                Status Atual: <?php echo $registro['status_funcionario']?>
                 <br>
                 <div class="botoes">
                     <input type="submit" value="Confirmar" id="botao-confirmar" class="botao-operacao" name="enviaInformacoes">

@@ -125,7 +125,7 @@ class Crud extends Conexao
     public function readVeiculo()
     {
         $conexao = $this->realizaConexao();
-        $sql = 'SELECT placa, veiculo.modelo, ano, autonomia, status.nomenclatura as status_veiculo, caracteristicas_veiculo.modelo as modelo
+        $sql = 'SELECT id_veiculo, placa, veiculo.modelo, ano, autonomia, status.nomenclatura as status_veiculo, caracteristicas_veiculo.modelo as modelo
         FROM veiculo INNER JOIN status ON status.id_status = veiculo.status_veiculo
         INNER JOIN caracteristicas_veiculo ON caracteristicas_veiculo.id_modelo = veiculo.modelo';
 
@@ -135,5 +135,20 @@ class Crud extends Conexao
         $resultado = $stmt->fetchAll();
 
         return $resultado;
+    }
+
+    public function deleteVeiculo()
+    {
+        $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
+
+        $conexao = $this->realizaConexao();
+        $sql = 'DELETE FROM veiculo where id_veiculo=?';
+
+        $stmt = $conexao->prepare($sql);
+        
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt;
     }
 }

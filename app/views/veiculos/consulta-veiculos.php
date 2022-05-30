@@ -27,15 +27,15 @@
                 </thead>
                 <tbody class="conteudo-tabela-consulta">
                     <?php foreach($consulta as $registro):?>
-                    <tr>
-                        <td><?php echo $registro['placa']?></td>
-                        <td><?php echo $registro['modelo']?></td>
-                        <td><?php echo $registro['ano']?></td>
-                        <td><?php echo $registro['autonomia']?> Km/h</td>
-                        <td><?php echo $registro['status_veiculo']?></td>
-                        <td><a class="acoes-consulta" href="">Editar</a></td>
-                        <td><a class="acoes-consulta" href="">Remover</a></td>
-                    </tr>
+                        <tr>
+                            <td><?php echo $registro['placa']?></td>
+                            <td><?php echo $registro['modelo']?></td>
+                            <td><?php echo $registro['ano']?></td>
+                            <td><?php echo $registro['autonomia']?> Km/h</td>
+                            <td><?php echo $registro['status_veiculo']?></td>
+                            <td><a class="acoes-consulta" href="?router=Pagina/home/">Editar</a></td>
+                            <td><a class="acoes-consulta" href="?router=Pagina/deletaVeiculo/&id=<?php echo base64_encode($registro['id_veiculo']);?>&placa=<?php echo base64_encode($registro['placa'])?>">Remover</a></td>
+                        </tr>
                     <?php endforeach;?>
                 </tbody>
             </table>

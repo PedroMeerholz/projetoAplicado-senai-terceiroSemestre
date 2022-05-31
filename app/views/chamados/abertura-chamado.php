@@ -16,41 +16,40 @@
 			<table class="tabela-funcionario">
 				<thead>
 					<tr>
+						<td></td>
 						<td class="titulo-coluna">Nome</td>
 						<td class="titulo-coluna">Cargo</td>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td class="nome-funcionario">Pedro</td>
-						<td class="cargo-funcionario">Motorista</td>
-					</tr>
-					<tr>
-						<td class="nome-funcionario">Lucas</td>
-						<td class="cargo-funcionario">Motorista</td>
-					</tr>
+					<?php foreach($consultaFuncionario as $registro):?>
+						<tr>
+							<td><input type="radio" name="funcionarioSelecionado" value="<?php $registro['id_funcionario'];?>" checked></td>
+							<td class="nome-funcionario"><?php echo $registro['nome']?></td>
+							<td class="cargo-funcionario"><?php echo $registro['cargo']?></td>
+						</tr>
+					<?php endforeach;?>
 				</tbody>
 			</table>
 			<br>
 			<table class="tabela-veiculo">
 				<thead>
 					<tr>
+						<td></td>
 						<td class="titulo-coluna">Placa</td>
 						<td class="titulo-coluna">Modelo</td>
 						<td class="titulo-coluna">Autonomia</td>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>AAAA</td>
-						<td>Strada</td>
-						<td>8.4</td>
-					</tr>
-					<tr>
-						<td>BBBB</td>
-						<td>Uno</td>
-						<td>10.1</td>
-					</tr>
+					<?php foreach($consultaVeiculo as $registro):?>
+						<tr>
+							<td><input type="radio" name="veiculoSelecionado" value="<?php $registro['id_veiculo']?>" checked></td>
+							<td><?php echo $registro['placa']?></td>
+							<td><?php echo $registro['modelo']?></td>
+							<td><?php echo $registro['autonomia']?> Km/L</td>
+						</tr>
+					<?php endforeach;?>
 				</tbody>
 			</table>
 		</div>

@@ -39,7 +39,11 @@ thead {
 }
 
 tr:nth-child(2n) {
-    background-color: #6ab7ee;
+    background-color: rgb(247, 242, 242);
+}
+
+td {
+    padding: 1%;
 }
 
 .botoes {

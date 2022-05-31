@@ -191,4 +191,39 @@ class Crud extends Conexao
 
         return $stmt;
     }
+
+    public function consultaFuncionariosDisponiveis()
+    {
+        $conexao = $this->realizaConexao();
+        
+        $sql = 'SELECT id_funcionario, nome, cargo, cargo.nomenclatura as cargo FROM funcionario 
+        INNER JOIN cargo ON id_cargo = funcionario.cargo WHERE status_funcionario = 1;';
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll();
+    
+        return $resultado;
+    }
+
+    public function consultaVeiculosDisponiveis()
+    {
+        $conexao = $this->realizaConexao();
+
+        $sql = 'SELECT id_veiculo, placa, autonomia, caracteristicas_veiculo.modelo as modelo FROM veiculo 
+        INNER JOIN caracteristicas_veiculo ON caracteristicas_veiculo.id_modelo = veiculo.modelo 
+        WHERE status_veiculo = 1;';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll();
+
+        return $resultado;
+    }
+
+    public function createChamado()
+    {
+        
+    }
 }

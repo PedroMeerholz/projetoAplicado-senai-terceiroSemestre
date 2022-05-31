@@ -102,6 +102,8 @@ class Pagina extends Crud
 
     public function aberturaChamado()
     {
+        $consultaFuncionario = $this->consultaFuncionariosDisponiveis();
+        $consultaVeiculo = $this->consultaVeiculosDisponiveis();
         require_once __DIR__ . '/../views/chamados/abertura-chamado.php';
     }
 

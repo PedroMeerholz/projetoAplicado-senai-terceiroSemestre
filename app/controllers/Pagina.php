@@ -75,6 +75,18 @@ class Pagina extends Crud
         require_once __DIR__ . '/../views/veiculos/consulta-veiculos.php';
     }
 
+    public function editaVeiculo()
+    {
+        $edita = $this->readOnlyVeiculo();
+        require_once __DIR__ . '/../views/veiculos/edita-veiculo.php';
+    }
+
+    public function alterarRegistroVeiculo()
+    {
+        $this->updateVeiculo();
+        header('Location:?router=Pagina/consultaVeiculo/');
+    }
+
     public function deletaVeiculo()
     {
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);

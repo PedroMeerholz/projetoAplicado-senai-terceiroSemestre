@@ -33,7 +33,7 @@
                             <td><?php echo $registro['ano']?></td>
                             <td><?php echo $registro['autonomia']?> Km/h</td>
                             <td><?php echo $registro['status_veiculo']?></td>
-                            <td><a class="acoes-consulta" href="?router=Pagina/home/">Editar</a></td>
+                            <td><a class="acoes-consulta" href="?router=Pagina/editaVeiculo/&id=<?php echo base64_encode($registro['id_veiculo']);?>">Editar</a></td>
                             <td><a class="acoes-consulta" href="?router=Pagina/deletaVeiculo/&id=<?php echo base64_encode($registro['id_veiculo']);?>&placa=<?php echo base64_encode($registro['placa'])?>">Remover</a></td>
                         </tr>
                     <?php endforeach;?>

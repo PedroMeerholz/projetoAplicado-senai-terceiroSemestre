@@ -137,6 +137,46 @@ class Crud extends Conexao
         return $resultado;
     }
 
+    public function readOnlyVeiculo()
+    {
+        $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT * FROM veiculo WHERE id_veiculo=?';
+        $sql = 'SELECT id_veiculo, placa, ano, autonomia, caracteristicas_veiculo.modelo as modelo, status.nomenclatura as status_veiculo
+        FROM veiculo INNER JOIN caracteristicas_veiculo ON id_modelo = veiculo.modelo INNER JOIN status ON id_status = status_veiculo 
+        WHERE id_veiculo = ?';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll();
+
+        return $resultado;
+    }
+
+    public function updateVeiculo()
+    {
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+        $placa = filter_input(INPUT_POST, 'entradaPlacaVeiculo', FILTER_SANITIZE_SPECIAL_CHARS);
+        $ano = filter_input(INPUT_POST, 'entradaAnoVeiculo', FILTER_SANITIZE_SPECIAL_CHARS);
+        $autonomia = filter_input(INPUT_POST, 'entradaAutonomiaVeiculo', FILTER_SANITIZE_SPECIAL_CHARS);
+        $modelo = filter_input(INPUT_POST, 'entradaModeloVeiculo', FILTER_SANITIZE_SPECIAL_CHARS);
+        $status = filter_input(INPUT_POST, 'entradaStatusVeiculo', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $conexao = $this->realizaConexao(); 
+        $sql = 'UPDATE veiculo SET placa=?, ano=?, autonomia=?, modelo=?, status_veiculo=? WHERE id_veiculo=?';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $placa);
+        $stmt->bindValue(2, $ano);
+        $stmt->bindValue(3, $autonomia);
+        $stmt->bindValue(4, $modelo);
+        $stmt->bindValue(5, $status);
+        $stmt->bindValue(6, $id);
+        $stmt->execute();
+    }
+
     public function deleteVeiculo()
     {
         $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
@@ -145,7 +185,7 @@ class Crud extends Conexao
         $sql = 'DELETE FROM veiculo where id_veiculo=?';
 
         $stmt = $conexao->prepare($sql);
-        
+
         $stmt->bindValue(1, $id);
         $stmt->execute();
 

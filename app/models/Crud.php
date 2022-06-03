@@ -238,4 +238,21 @@ class Crud extends Conexao
 
         return $stmt;
     }
+
+    public function readChamado()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT id_chamado, data_chamado, funcionario.nome as funcionario, veiculo.placa as placa_veiculo, caracteristicas_veiculo.modelo as modelo_veiculo, status.nomenclatura as status_chamado, distancia, carbono 
+        FROM chamado INNER JOIN funcionario ON funcionario.id_funcionario = chamado.funcionario 
+        INNER JOIN veiculo ON veiculo.id_veiculo = chamado.veiculo
+        INNER JOIN caracteristicas_veiculo ON caracteristicas_veiculo.id_modelo = veiculo.modelo 
+        INNER JOIN status ON status.id_status = status_chamado;';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll();
+        
+        return $resultado;
+    }
 }

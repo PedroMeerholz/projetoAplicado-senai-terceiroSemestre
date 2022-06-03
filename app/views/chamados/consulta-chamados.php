@@ -13,38 +13,31 @@
     <h1>Consulta de Chamados</h1>
     <div class="box-principal">
         <div class="box-secundario">
-            <input type="submit" value="Realizar Consulta" class="botao-operacao">
             <table class="tabela-consulta">
                 <thead class="cabecalho-tabela-consulta">
                     <tr class="linha-cabecalho-tabela-consulta">
-                        <td>ID</td>
                         <td>Data</td>
                         <td>Funcionário</td>
                         <td>Veículo</td>
                         <td>Distancia(Km)</td>
                         <td>Carbono(kg)</td>
                         <td>Status</td>
+                        <td colspan="2">Ações</td>
                     </tr>
                 </thead>
                 <tbody class="conteudo-tabela-consulta">
-                    <tr>
-                        <td>1</td>
-                        <td>2022-03-30</td>
-                        <td>João Silva</td>
-                        <td>BRA29A12</td>
-                        <td>52</td>
-                        <td>5.8</td>
-                        <td>Disponível</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>2022-03-31</td>
-                        <td>João Silva</td>
-                        <td>BRA29A12</td>
-                        <td>25</td>
-                        <td>3.47</td>
-                        <td>Disponível</td>
-                    </tr>
+                    <?php foreach($consulta as $registro):?>
+                        <tr>
+                            <td><?php echo $registro['data_chamado'];?></td>
+                            <td><?php echo $registro['funcionario'];?></td>
+                            <td><?php echo $registro['modelo_veiculo'];?>(<?php echo $registro['placa_veiculo'];?>)</td>
+                            <td><?php echo $registro['distancia'];?></td>
+                            <td><?php echo $registro['carbono'];?></td>
+                            <td><?php echo $registro['status_chamado'];?></td>
+                            <td><a class="acoes-consulta">Editar</a></td>
+                            <td><a class="acoes-consulta">Remover</a></td>
+                        </tr>
+                    <?php endforeach;?>
                 </tbody>
             </table>
         </div>

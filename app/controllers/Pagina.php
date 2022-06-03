@@ -115,6 +115,7 @@ class Pagina extends Crud
 
     public function consultaChamado()
     {
+        $consulta = $this->readChamado();
         require_once __DIR__ . '/../views/chamados/consulta-chamados.php';
     }
 

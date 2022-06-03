@@ -107,6 +107,12 @@ class Pagina extends Crud
         require_once __DIR__ . '/../views/chamados/abertura-chamado.php';
     }
 
+    public function registrarChamado()
+    {
+        $registra = $this->createChamado();
+        header('Location:?router=Pagina/aberturaChamado/');
+    }
+
     public function consultaChamado()
     {
         require_once __DIR__ . '/../views/chamados/consulta-chamados.php';

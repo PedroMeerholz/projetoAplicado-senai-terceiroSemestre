@@ -224,6 +224,18 @@ class Crud extends Conexao
 
     public function createChamado()
     {
-        
+        $funcionario = filter_input(INPUT_POST, 'funcionarioSelecionado', FILTER_SANITIZE_SPECIAL_CHARS);
+        $veiculo = filter_input(INPUT_POST, 'veiculoSelecionado', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $conexao = $this->realizaConexao();
+        $sql = 'INSERT INTO chamado(funcionario, veiculo, data_chamado, status_chamado) values(?, ?, now(), ?);';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $funcionario);
+        $stmt->bindValue(2, $veiculo);
+        $stmt->bindValue(3, 1);
+        $stmt->execute();
+
+        return $stmt;
     }
 }

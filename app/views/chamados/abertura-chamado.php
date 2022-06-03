@@ -11,26 +11,26 @@
 </head>
 <body>
 	<h1>Abertura de Chamados</h1>
-	<div class="box-principal">
+	<form action="?router=Pagina/registrarChamado/>" method="post" class="box-principal">
 		<div class="box-secundario">
-			<table class="tabela-funcionario">
-				<thead>
-					<tr>
-						<td></td>
-						<td class="titulo-coluna">Nome</td>
-						<td class="titulo-coluna">Cargo</td>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach($consultaFuncionario as $registro):?>
+				<table class="tabela-funcionario">
+					<thead>
 						<tr>
-							<td><input type="radio" name="funcionarioSelecionado" value="<?php $registro['id_funcionario'];?>" checked></td>
-							<td class="nome-funcionario"><?php echo $registro['nome']?></td>
-							<td class="cargo-funcionario"><?php echo $registro['cargo']?></td>
+							<td></td>
+							<td class="titulo-coluna">Nome</td>
+							<td class="titulo-coluna">Cargo</td>
 						</tr>
-					<?php endforeach;?>
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						<?php foreach($consultaFuncionario as $registro):?>
+							<tr>
+								<td><input type="radio" name="funcionarioSelecionado" value="<?php echo $registro['id_funcionario'];?>" checked></td>
+								<td class="nome-funcionario"><?php echo $registro['nome']?></td>
+								<td class="cargo-funcionario"><?php echo $registro['cargo']?></td>
+							</tr>
+						<?php endforeach;?>
+					</tbody>
+				</table>
 			<br>
 			<table class="tabela-veiculo">
 				<thead>
@@ -44,7 +44,7 @@
 				<tbody>
 					<?php foreach($consultaVeiculo as $registro):?>
 						<tr>
-							<td><input type="radio" name="veiculoSelecionado" value="<?php $registro['id_veiculo']?>" checked></td>
+							<td><input type="radio" name="veiculoSelecionado" value="<?php echo $registro['id_veiculo']?>" checked></td>
 							<td><?php echo $registro['placa']?></td>
 							<td><?php echo $registro['modelo']?></td>
 							<td><?php echo $registro['autonomia']?> Km/L</td>
@@ -56,6 +56,6 @@
 		<div class="botoes">
 			<input type="submit" value="Confirmar" class="botao-operacao" name="enviaInformacoes">
 		</div>
-	</div>
+	</form>
 </body>
 </html>

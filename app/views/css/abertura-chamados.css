@@ -9,10 +9,13 @@ h1 {
 .box-principal {
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 5%;
     background-color: #e0e0e0;
     border: none;
     border-radius: 3px;
     padding: 30px;
+    height: 500px;
+    overflow-y: scroll;
 }
 
 .box-secundario {
@@ -23,6 +26,17 @@ h1 {
 table {
     border-collapse: collapse;
     width: 45%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+thead {
+    background-color: rgb(187, 186, 186);
+    font-weight: bolder;
+}
+
+td {
+    padding: 10px;
 }
 
 .tabela-funcionario td{
@@ -33,17 +47,8 @@ table {
     width: 25%;
 }
 
-thead {
-    background-color: rgb(187, 186, 186);
-    font-weight: bolder;
-}
-
 tr:nth-child(2n) {
     background-color: rgb(247, 242, 242);
-}
-
-td {
-    padding: 1%;
 }
 
 .botoes {

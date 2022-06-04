@@ -20,6 +20,11 @@ class Pagina extends Crud
         $total_veiculos = $this->totalVeiculos();
         $veiculos_disponiveis = $this->veiculosDisponiveis();
         $veiculos_indisponiveis = $this->veiculosIndisponiveis();
+
+        $total_chamados = $this->chamadosDisponiveis();
+        $chamados_abertos = $this->chamadosEmAberto();
+        $chamados_finalizados = $this->chamadosFinalizados();
+
         require_once __DIR__ . '/../views/home.php';
     }
 

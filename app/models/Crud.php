@@ -88,6 +88,48 @@ class Crud extends Conexao
         return $resultado;
     }
 
+    public function chamadosDisponiveis()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT COUNT(id_chamado) AS total_chamados FROM chamado;';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        $resultado = $resultado['total_chamados'];
+
+        return $resultado;
+    }
+
+    public function chamadosEmAberto()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT COUNT(id_chamado) AS chamados_abertos FROM chamado WHERE status_chamado=3';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        $resultado = $resultado['chamados_abertos'];
+
+        return $resultado;
+    }
+
+    public function chamadosFinalizados()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT COUNT(id_chamado) AS chamados_finalizados FROM chamado WHERE status_chamado=4';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        $resultado = $resultado['chamados_finalizados'];
+
+        return $resultado;   
+    }
+
     public function createFuncionario()
     {
         $nome = filter_input(INPUT_POST, 'entradaNomeFuncionario', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -317,7 +359,7 @@ class Crud extends Conexao
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(1, $funcionario);
         $stmt->bindValue(2, $veiculo);
-        $stmt->bindValue(3, 1);
+        $stmt->bindValue(3, 3);
         $stmt->execute();
 
         return $stmt;
@@ -344,7 +386,8 @@ class Crud extends Conexao
     {
         $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
         $conexao = $this->realizaConexao();
-        $sql = 'SELECT id_chamado, funcionario, veiculo, distancia, status_chamado FROM chamado WHERE id_chamado=?';
+        $sql = 'SELECT id_chamado, funcionario, veiculo, distancia, status.nomenclatura AS status_chamado FROM chamado 
+        INNER JOIN status ON status.id_status=chamado.status_chamado WHERE id_chamado=?';
 
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(1, $id);

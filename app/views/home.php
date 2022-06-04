@@ -30,9 +30,9 @@
         <div class="informacoes-especificas informacoes-especificas-esquerda">
             <h2>Chamados</h2>
             <br>
-            <p>N° de Chamados:</p>
-            <p>Chamados Abertos:</p>
-            <p>Chamados Fechados:</p>
+            <p>N° de Chamados: <?php echo $total_chamados?></p>
+            <p>Chamados Abertos: <?php echo $chamados_abertos?></p>
+            <p>Chamados Fechados: <?php echo $chamados_finalizados?></p>
         </div>
         <div class="informacoes-especificas informacoes-especificas-direita">
             <h2>Carbono</h2>

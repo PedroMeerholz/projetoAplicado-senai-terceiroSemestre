@@ -22,8 +22,8 @@
                 <select name="entradaStatusChamado" id="entradaStatusChamado" required>
                     <optgroup name="status">
                         <option value="" selected disabled></option>
-                        <option value="1">Disponível</option>
-                        <option value="2">Indisponível</option>
+                        <option value="3">Em Aberto</option>
+                        <option value="4">Finzalido</option>
                     </optgroup>
                 </select>
                 Status Atual: <?php echo $registro_chamado['status_chamado']?>

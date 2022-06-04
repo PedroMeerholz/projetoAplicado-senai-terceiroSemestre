@@ -13,6 +13,9 @@ class Pagina extends Crud
 
     public function home()
     {
+        $total_funcionarios = $this->totalFuncionarios();
+        $funcionarios_disponiveis = $this->funcionariosDisponiveis();
+        $funcionarios_indisponiveis = $this->funcionariosIndisponiveis();
         require_once __DIR__ . '/../views/home.php';
     }
 

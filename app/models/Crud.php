@@ -4,6 +4,48 @@ namespace app\models;
 
 class Crud extends Conexao
 {
+    public function totalFuncionarios()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT COUNT(id_funcionario) AS total_funcionarios FROM funcionario';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        $resultado = $resultado['total_funcionarios'];
+
+        return $resultado;
+    }
+
+    public function funcionariosDisponiveis()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT COUNT(id_funcionario) AS funcionarios_disponiveis FROM funcionario WHERE status_funcionario=1';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        $resultado = $resultado['funcionarios_disponiveis'];
+
+        return $resultado;
+    }
+
+    public function funcionariosIndisponiveis()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT COUNT(id_funcionario) AS funcionarios_indisponiveis FROM funcionario WHERE status_funcionario=2';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        $resultado = $resultado['funcionarios_indisponiveis'];
+
+        return $resultado;
+    }
+
     public function createFuncionario()
     {
         $nome = filter_input(INPUT_POST, 'entradaNomeFuncionario', FILTER_SANITIZE_SPECIAL_CHARS);

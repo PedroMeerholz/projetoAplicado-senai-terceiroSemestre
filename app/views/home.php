@@ -16,9 +16,9 @@
         <div class="informacoes-especificas informacoes-especificas-esquerda">
             <h2>Funcionários</h2>
             <br>
-            <p>N° de Funcionários:</p>
-            <p>Funcionários Disponíveis:</p>
-            <p>Funcionários Indisponíveis:</p>
+            <p>N° de Funcionários: <?php echo $total_funcionarios?></p>
+            <p>Funcionários Disponíveis: <?php echo $funcionarios_disponiveis?></p>
+            <p>Funcionários Indisponíveis: <?php echo $funcionarios_indisponiveis?></p>
         </div>
         <div class="informacoes-especificas informacoes-especificas-direita">
             <h2>Veículos</h2>

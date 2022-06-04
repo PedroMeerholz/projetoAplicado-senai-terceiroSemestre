@@ -37,9 +37,13 @@
         <div class="informacoes-especificas informacoes-especificas-direita">
             <h2>Carbono</h2>
             <br>
-            <p>Carbono emitido(Kg):</p>
-            <p>Veículo que mais emitiu:</p>
-            <p>Funcionário que mais emitiu:</p>
+            <p>Carbono emitido(Kg): <?php echo $carbono_emitido?></p>
+            <?php foreach($maior_veiculo_emissor as $resultado):?>
+                <p>Veículo que mais emitiu: <?php echo $resultado['veiculo']?>(<?php echo $resultado['carbono']?> Kg)</p>
+            <?php endforeach;?>
+            <?php foreach($maior_funcionario_emissor as $resultado):?>
+                <p>Funcionário que mais emitiu: <?php echo $resultado['funcionario']?>(<?php echo $resultado['carbono']?> Kg)</p>
+            <?php endforeach;?>
         </div>
     </div>
 </body>

@@ -23,7 +23,7 @@
                     <optgroup name="status">
                         <option value="" selected disabled></option>
                         <option value="3">Em Aberto</option>
-                        <option value="4">Finzalido</option>
+                        <option value="4">Finalizado</option>
                     </optgroup>
                 </select>
                 Status Atual: <?php echo $registro_chamado['status_chamado']?>

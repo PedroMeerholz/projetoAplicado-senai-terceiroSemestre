@@ -25,6 +25,10 @@ class Pagina extends Crud
         $chamados_abertos = $this->chamadosEmAberto();
         $chamados_finalizados = $this->chamadosFinalizados();
 
+        $carbono_emitido = $this->carbonoEmitido();
+        $maior_veiculo_emissor = $this->maiorVeiculoEmissor();
+        $maior_funcionario_emissor = $this->maiorFuncionarioEmissor();
+
         require_once __DIR__ . '/../views/home.php';
     }
 

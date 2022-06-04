@@ -131,6 +131,18 @@ class Pagina extends Crud
         header('Location:?router=Pagina/consultaChamado/');
     }
 
+    public function deletaChamado()
+    {
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+        require_once __DIR__ . '/../views/chamados/deleta-chamado.php';
+    }
+
+    public function deletarRegistroChamado()
+    {
+        $deleta = $this->deleteChamado();
+        header('Location:?router=Pagina/consultaChamado/');
+    }
+
     public function geraRelatorio()
     {
         require_once __DIR__ . '/../views/relatorio.php';

@@ -303,4 +303,18 @@ class Crud extends Conexao
 
         return $emissao;
     }
+
+    public function deleteChamado()
+    {
+        $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
+
+        $conexao = $this->realizaConexao();
+        $sql = 'DELETE FROM chamado WHERE id_chamado = ?;';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt;
+    }
 }

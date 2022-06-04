@@ -1,0 +1,50 @@
+h1 {
+    font-weight: bolder;
+    font-size: 25px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+}
+
+.box-principal {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: left;
+    border-radius: 3px;
+    background-color: #e0e0e0;
+}
+
+.campos-fechar-chamado {
+    padding: 30px;
+}
+
+.campos-fechar-chamado input {
+    margin-bottom: 20px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.botao-operacao {
+    width: 30%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #308cca;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+.botao-operacao:hover {
+    background-color: #004a81;
+    transition: 1s;
+}

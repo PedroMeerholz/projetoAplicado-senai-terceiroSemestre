@@ -119,6 +119,18 @@ class Pagina extends Crud
         require_once __DIR__ . '/../views/chamados/consulta-chamados.php';
     }
 
+    public function editaChamado()
+    {
+        $edita = $this->readOnlyChamado();
+        require_once __DIR__ . '/../views/chamados/edita-chamado.php';
+    }
+
+    public function alterarRegistroChamado()
+    {
+        $this->updateChamado();
+        header('Location:?router=Pagina/consultaChamado/');
+    }
+
     public function geraRelatorio()
     {
         require_once __DIR__ . '/../views/relatorio.php';

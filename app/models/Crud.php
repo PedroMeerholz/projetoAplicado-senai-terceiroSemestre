@@ -255,4 +255,52 @@ class Crud extends Conexao
         
         return $resultado;
     }
+
+    public function readOnlyChamado()
+    {
+        $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT id_chamado, funcionario, veiculo, distancia, status_chamado FROM chamado WHERE id_chamado=?';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll();
+
+        return $resultado;
+    }
+
+    public function updateChamado()
+    {
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+        $distancia = filter_input(INPUT_POST, 'entradaDistanciaChamado', FILTER_SANITIZE_SPECIAL_CHARS);
+        $status_chamado = filter_input(INPUT_POST, 'entradaStatusChamado', FILTER_SANITIZE_SPECIAL_CHARS);
+        $sql_autonomia_veiculo = 'SELECT veiculo.autonomia FROM chamado INNER JOIN veiculo ON chamado.veiculo = id_veiculo WHERE id_chamado=?';
+        
+        $conexao = $this->realizaConexao();
+
+        $stmt = $conexao->prepare($sql_autonomia_veiculo);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        $autonomia_veiculo = $stmt->fetch();
+        $carbono = $this->calculaCarbono($distancia, $autonomia_veiculo['autonomia']);
+
+        $sql_update = 'UPDATE chamado SET distancia=?, carbono=?, status_chamado=? WHERE id_chamado = ?';
+        $stmt = $conexao->prepare($sql_update);
+        $stmt->bindValue(1, $distancia);
+        $stmt->bindValue(2, $carbono);
+        $stmt->bindValue(3, $status_chamado);
+        $stmt->bindValue(4, $id);
+        $stmt->execute();
+    }
+
+    private function calculaCarbono($distancia, $autonomia)
+    {
+        $consumo_gasolina = $distancia / $autonomia;
+        $emissao = $consumo_gasolina * 0.73 * 0.75 * 3.7;
+
+        return $emissao;
+    }
 }

@@ -16,6 +16,10 @@ class Pagina extends Crud
         $total_funcionarios = $this->totalFuncionarios();
         $funcionarios_disponiveis = $this->funcionariosDisponiveis();
         $funcionarios_indisponiveis = $this->funcionariosIndisponiveis();
+
+        $total_veiculos = $this->totalVeiculos();
+        $veiculos_disponiveis = $this->veiculosDisponiveis();
+        $veiculos_indisponiveis = $this->veiculosIndisponiveis();
         require_once __DIR__ . '/../views/home.php';
     }
 

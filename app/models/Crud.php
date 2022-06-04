@@ -46,6 +46,48 @@ class Crud extends Conexao
         return $resultado;
     }
 
+    public function totalVeiculos()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT COUNT(id_veiculo) AS total_veiculos FROM veiculo;';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        $resultado = $resultado['total_veiculos'];
+
+        return $resultado;
+    }
+
+    public function veiculosDisponiveis()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT COUNT(id_veiculo) AS veiculos_disponiveis FROM veiculo WHERE status_veiculo=1;';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        $resultado = $resultado['veiculos_disponiveis'];
+
+        return $resultado;
+    }
+
+    public function veiculosIndisponiveis()
+    {
+        $conexao = $this->realizaConexao();
+        $sql = 'SELECT COUNT(id_veiculo) AS veiculos_indisponiveis FROM veiculo WHERE status_veiculo=2;';
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        $resultado = $resultado['veiculos_indisponiveis'];
+
+        return $resultado;
+    }
+
     public function createFuncionario()
     {
         $nome = filter_input(INPUT_POST, 'entradaNomeFuncionario', FILTER_SANITIZE_SPECIAL_CHARS);

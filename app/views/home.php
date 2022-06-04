@@ -23,9 +23,9 @@
         <div class="informacoes-especificas informacoes-especificas-direita">
             <h2>Veículos</h2>
             <br>
-            <p>N° de Veículos:</p>
-            <p>Veículos Disponíveis:</p>
-            <p>Veículos Indisponíveis:</p>
+            <p>N° de Veículos: <?php echo $total_veiculos?></p>
+            <p>Veículos Disponíveis: <?php echo $veiculos_disponiveis?></p>
+            <p>Veículos Indisponíveis: <?php echo $veiculos_indisponiveis?></p>
         </div>
         <div class="informacoes-especificas informacoes-especificas-esquerda">
             <h2>Chamados</h2>

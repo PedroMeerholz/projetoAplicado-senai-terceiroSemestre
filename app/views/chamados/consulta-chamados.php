@@ -34,8 +34,8 @@
                             <td><?php echo $registro['distancia'];?></td>
                             <td><?php echo $registro['carbono'];?></td>
                             <td><?php echo $registro['status_chamado'];?></td>
-                            <td><a class="acoes-consulta" href="?router=Pagina/editaChamado/&id=<?php echo base64_encode($registro['id_chamado'])?>">Editar</a></td>
-                            <td><a class="acoes-consulta" href="?router=Pagina/deletaChamado/&id=<?php echo base64_encode($registro['id_chamado'])?>">Remover</a></td>
+                            <td><a class="acoes-consulta" href="?router=ManterChamado/editaChamado/&id=<?php echo base64_encode($registro['id_chamado'])?>">Editar</a></td>
+                            <td><a class="acoes-consulta" href="?router=ManterChamado/deletaChamado/&id=<?php echo base64_encode($registro['id_chamado'])?>">Remover</a></td>
                         </tr>
                     <?php endforeach;?>
                 </tbody>

@@ -13,8 +13,8 @@
     <div class="formulario-cadastro-funcionario">
         <h2>Deseja remover o chamado selecionado?</h2>
         <div class="botoes">
-            <button class="botao-operacao" onclick="location.href='?router=Pagina/deletarRegistroChamado/&id=<?php echo $id;?>'" type="button">Sim</button>
-            <button class="botao-operacao" onclick="location.href='?router=Pagina/consultaChamado/'" type="button">Não</button>
+            <button class="botao-operacao" onclick="location.href='?router=ManterChamado/deletarRegistroChamado/&id=<?php echo $id;?>'" type="button">Sim</button>
+            <button class="botao-operacao" onclick="location.href='?router=Manterchamado/consultaChamado/'" type="button">Não</button>
         </div>
     </div>
 </body>

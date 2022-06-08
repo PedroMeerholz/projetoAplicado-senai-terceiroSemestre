@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Abertura de Chamados</h1>
-	<form action="?router=Pagina/registrarChamado/>" method="post" class="box-principal">
+	<form action="?router=ManterChamado/registrarChamado/>" method="post" class="box-principal">
 		<div class="box-secundario">
 				<table class="tabela-funcionario">
 					<thead>

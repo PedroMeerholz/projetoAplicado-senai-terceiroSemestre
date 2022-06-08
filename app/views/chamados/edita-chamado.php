@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Editar Chamado</h1>
-    <form action="?router=Pagina/alterarRegistroChamado/>" method="post" class="box-principal">
+    <form action="?router=ManterChamado/alterarRegistroChamado/>" method="post" class="box-principal">
         <div class="campos-fechar-chamado">
             <?php foreach($edita as $registro_chamado):?>
                 <input type="hidden" name="id" value="<?php echo $registro_chamado['id_chamado']?>">

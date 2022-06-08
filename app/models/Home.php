@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-class Crud extends Conexao
+class Home extends Conexao
 {
     public function totalFuncionarios()
     {

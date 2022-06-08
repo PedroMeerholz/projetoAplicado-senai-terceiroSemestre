@@ -15,7 +15,7 @@
             <div class="item-navegacao dropdown">
                 <button class="dropbtn">Home</button>
                 <div class="dropdowncontent">
-                    <a href="?router=Pagina/home/">Informações Gerais</a>
+                    <a href="?router=HomeDashboard/home/">Informações Gerais</a>
                 </div>
             </div>
             <div class="item-navegacao dropdown">

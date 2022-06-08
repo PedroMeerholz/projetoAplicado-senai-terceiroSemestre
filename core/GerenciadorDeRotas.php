@@ -4,7 +4,7 @@ namespace core;
 
 class GerenciadorDeRotas
 {
-    private $controller = 'Pagina';
+    private $controller = 'HomeDashboard';
     private $metodo = 'home';
     private $parametro = [];
 

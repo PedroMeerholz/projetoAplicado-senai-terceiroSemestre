@@ -21,8 +21,8 @@
             <div class="item-navegacao dropdown">
                 <button class="dropbtn">Funcionários</button>
                 <div class="dropdowncontent">
-                    <a href="?router=Pagina/cadastroFuncionario/">Cadastrar</a>
-                    <a href="?router=Pagina/consultaFuncionario/">Consultar</a>
+                    <a href="?router=ManterFuncionario/cadastroFuncionario/">Cadastrar</a>
+                    <a href="?router=ManterFuncionario/consultaFuncionario/">Consultar</a>
                 </div>
             </div>
             <div class="item-navegacao dropdown">

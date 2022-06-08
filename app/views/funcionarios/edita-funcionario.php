@@ -12,7 +12,7 @@
 <body>
 <h1>Editar Funcionário</h1>
 	<div class="formulario-cadastro-funcionario">
-		<form action="?router=Pagina/alterarRegistroFuncionario/" method="post" class="cadastro-funcionario" >
+		<form action="?router=ManterFuncionario/alterarRegistroFuncionario/" method="post" class="cadastro-funcionario" >
             <?php foreach($edita as $registro):?>
 			    <input type="hidden" name="id" value="<?php echo $registro['id_funcionario']?>">
                 <label for="entradaNomeFuncionario">Nome Completo:</label>

@@ -12,7 +12,7 @@
 <body>
 <h1>Cadastro de Funcionários</h1>
 	<div class="formulario-cadastro-funcionario">
-		<form action="?router=Pagina/registrarFuncionario/" method="post" class="cadastro-funcionario" >
+		<form action="?router=ManterFuncionario/registrarFuncionario/" method="post" class="cadastro-funcionario" >
 			<label for="entradaNomeFuncionario">Nome Completo:</label>
 			<input type="text" name="entradaNomeFuncionario" id="entradaNomeFuncionario" placeholder="João da Silva" autofocus required>
 			<br>

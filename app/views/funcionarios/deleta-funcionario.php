@@ -13,8 +13,8 @@
     <div class="formulario-cadastro-funcionario">
         <h2>Deseja remover o funcionário <?php echo base64_decode($nome)?>?</h2>
         <div class="botoes">
-            <button class="botao-operacao" onclick="location.href='?router=Pagina/deletarRegistroFuncionario/&id=<?php echo $id;?>'" type="button">Sim</button>
-            <button class="botao-operacao" onclick="location.href='?router=Pagina/consultaFuncionario/'">Não</button>
+            <button class="botao-operacao" onclick="location.href='?router=ManterFuncionario/deletarRegistroFuncionario/&id=<?php echo $id;?>'" type="button">Sim</button>
+            <button class="botao-operacao" onclick="location.href='?router=ManterFuncionario/consultaFuncionario/'">Não</button>
         </div>
     </div>
 </body>

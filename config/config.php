@@ -28,8 +28,8 @@
             <div class="item-navegacao dropdown">
                 <button class="dropbtn">Veículos</button>
                 <div class="dropdowncontent">
-                    <a href="?router=Pagina/cadastroVeiculo/">Cadastrar</a>
-                    <a href="?router=Pagina/consultaVeiculo/">Consultar</a>
+                    <a href="?router=ManterVeiculo/cadastroVeiculo/">Cadastrar</a>
+                    <a href="?router=ManterVeiculo/consultaVeiculo/">Consultar</a>
                 </div>
             </div>
             <div class="item-navegacao dropdown">

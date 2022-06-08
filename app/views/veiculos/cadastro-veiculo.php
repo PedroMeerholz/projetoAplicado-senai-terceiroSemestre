@@ -12,7 +12,7 @@
 <body>
 <h1>Cadastro de Veículos</h1>
 	<div class="formulario-cadastro-veiculo">
-		<form action="?router=Pagina/registrarVeiculo/" method="post" class="cadastro-veiculo">
+		<form action="?router=ManterVeiculo/registrarVeiculo/" method="post" class="cadastro-veiculo">
 			<label for="entradaPlacaVeiculo">Placa:</label>
 			<input type="text" name="entradaPlacaVeiculo" id="entradaPlacaVeiculo" placeholder="BRA3R52" autofocus required>
 			<br>

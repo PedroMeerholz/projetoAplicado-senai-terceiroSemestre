@@ -13,8 +13,8 @@
     <div class="formulario-cadastro-funcionario">
         <h2>Deseja remover o veículo de placa <?php echo base64_decode($placa)?>?</h2>
         <div class="botoes">
-            <button class="botao-operacao" onclick="location.href='?router=Pagina/deletarRegistroVeiculo/&id=<?php echo $id;?>'" type="button">Sim</button>
-            <button class="botao-operacao" onclick="location.href='?router=Pagina/consultaVeiculo/'" type="button">Não</button>
+            <button class="botao-operacao" onclick="location.href='?router=ManterVeiculo/deletarRegistroVeiculo/&id=<?php echo $id;?>'" type="button">Sim</button>
+            <button class="botao-operacao" onclick="location.href='?router=ManterVeiculo/consultaVeiculo/'" type="button">Não</button>
         </div>
     </div>
 </body>

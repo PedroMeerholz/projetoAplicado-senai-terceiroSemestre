@@ -12,7 +12,7 @@
 <body>
 <h1>Editar Veículo</h1>
 	<div class="formulario-cadastro-veiculo">
-		<form action="?router=Pagina/alterarRegistroVeiculo/" method="post" class="cadastro-veiculo">
+		<form action="?router=ManterVeiculo/alterarRegistroVeiculo/" method="post" class="cadastro-veiculo">
             <?php foreach($edita as $registro):?>
                 <input type="hidden" name="id" value="<?php echo $registro['id_veiculo']?>">
                 <label for="entradaPlacaVeiculo">Placa:</label>

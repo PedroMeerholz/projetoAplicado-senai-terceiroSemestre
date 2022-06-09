@@ -7,12 +7,12 @@
 	<link rel="icon" type="image/x-icon" href="/img/logo.png">
 	<link rel="stylesheet" href="./app/views/css/reset.css">
 	<link rel="stylesheet" href="./app/views/css/generico.css">
-	<link rel="stylesheet" href="./app/views/css/cadastro-funcionario.css">
+	<link rel="stylesheet" href="./app/views/css/formularios.css">
 </head>
 <body>
 <h1>Cadastro de Funcionários</h1>
-	<div class="formulario-cadastro-funcionario">
-		<form action="?router=ManterFuncionario/registrarFuncionario/" method="post" class="cadastro-funcionario" >
+	<div class="formulario-cadastro">
+		<form action="?router=ManterFuncionario/registrarFuncionario/" method="post" class="cadastro" >
 			<label for="entradaNomeFuncionario">Nome Completo:</label>
 			<input type="text" name="entradaNomeFuncionario" id="entradaNomeFuncionario" placeholder="João da Silva" autofocus required>
 			<br>

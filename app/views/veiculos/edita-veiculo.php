@@ -7,12 +7,12 @@
 	<link rel="icon" type="image/x-icon" href="/img/logo.png">
 	<link rel="stylesheet" href="./app/views/css/reset.css">
 	<link rel="stylesheet" href="./app/views/css/generico.css">
-	<link rel="stylesheet" href="./app/views/css/cadastro-veiculos.css">
+	<link rel="stylesheet" href="./app/views/css/formularios.css">
 </head>
 <body>
 <h1>Editar Veículo</h1>
-	<div class="formulario-cadastro-veiculo">
-		<form action="?router=ManterVeiculo/alterarRegistroVeiculo/" method="post" class="cadastro-veiculo">
+	<div class="formulario-cadastro">
+		<form action="?router=ManterVeiculo/alterarRegistroVeiculo/" method="post" class="cadastro">
             <?php foreach($edita as $registro):?>
                 <input type="hidden" name="id" value="<?php echo $registro['id_veiculo']?>">
                 <label for="entradaPlacaVeiculo">Placa:</label>

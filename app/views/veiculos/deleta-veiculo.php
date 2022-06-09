@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Remover Registro</h1>
-    <div class="formulario-cadastro-funcionario">
+    <div class="informacoes-remocao">
         <h2>Deseja remover o veículo de placa <?php echo base64_decode($placa)?>?</h2>
         <div class="botoes">
             <button class="botao-operacao" onclick="location.href='?router=ManterVeiculo/deletarRegistroVeiculo/&id=<?php echo $id;?>'" type="button">Sim</button>

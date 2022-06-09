@@ -7,12 +7,12 @@
 	<link rel="icon" type="image/x-icon" href="/img/logo.png">
 	<link rel="stylesheet" href="./app/views/css/reset.css">
 	<link rel="stylesheet" href="./app/views/css/generico.css">
-	<link rel="stylesheet" href="./app/views/css/cadastro-funcionario.css">
+	<link rel="stylesheet" href="./app/views/css/formularios.css">
 </head>
 <body>
 <h1>Editar Funcionário</h1>
-	<div class="formulario-cadastro-funcionario">
-		<form action="?router=ManterFuncionario/alterarRegistroFuncionario/" method="post" class="cadastro-funcionario" >
+	<div class="formulario-cadastro">
+		<form action="?router=ManterFuncionario/alterarRegistroFuncionario/" method="post" class="cadastro" >
             <?php foreach($edita as $registro):?>
 			    <input type="hidden" name="id" value="<?php echo $registro['id_funcionario']?>">
                 <label for="entradaNomeFuncionario">Nome Completo:</label>

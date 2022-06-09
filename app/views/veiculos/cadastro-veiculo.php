@@ -7,12 +7,12 @@
 	<link rel="icon" type="image/x-icon" href="/src/img/logo.png">
 	<link rel="stylesheet" href="./app/views/css/reset.css">
 	<link rel="stylesheet" href="./app/views/css/generico.css">
-	<link rel="stylesheet" href="./app/views/css/cadastro-veiculos.css">
+	<link rel="stylesheet" href="./app/views/css/formularios.css">
 </head>
 <body>
 <h1>Cadastro de Veículos</h1>
-	<div class="formulario-cadastro-veiculo">
-		<form action="?router=ManterVeiculo/registrarVeiculo/" method="post" class="cadastro-veiculo">
+	<div class="formulario-cadastro">
+		<form action="?router=ManterVeiculo/registrarVeiculo/" method="post" class="cadastro">
 			<label for="entradaPlacaVeiculo">Placa:</label>
 			<input type="text" name="entradaPlacaVeiculo" id="entradaPlacaVeiculo" placeholder="BRA3R52" autofocus required>
 			<br>

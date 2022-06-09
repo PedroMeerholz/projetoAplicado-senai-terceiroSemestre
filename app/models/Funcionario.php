@@ -14,18 +14,31 @@ class Funcionario extends Conexao
         $cargo = filter_input(INPUT_POST, 'entradaCargoFuncionario', FILTER_SANITIZE_SPECIAL_CHARS);
         $status = filter_input(INPUT_POST, 'entradaStatusFuncionario', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $conexao = $this->realizaConexao();
-        $sql = 'INSERT INTO funcionario(nome, cpf, nascimento, cargo, status_funcionario) values(?, ?, ?, ?, ?);';
+        $senha = filter_input(INPUT_POST, 'entradaSenhaFuncionario', FILTER_SANITIZE_SPECIAL_CHARS);
+        $confirmacao_senha = filter_input(INPUT_POST, 'entradaConfirmacaoSenhaFuncionario', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(1, $nome);
-        $stmt->bindValue(2, $cpf);
-        $stmt->bindValue(3, $nascimento);
-        $stmt->bindValue(4, $cargo);
-        $stmt->bindValue(5, $status);
-        $stmt->execute();
+        if($senha == $confirmacao_senha)
+        {
+            $senha = password_hash($senha, PASSWORD_DEFAULT);
+            $conexao = $this->realizaConexao();
+            $sql = 'INSERT INTO funcionario(nome, cpf, senha, nascimento, cargo, status_funcionario) values(?, ?, ?, ?, ?, ?);';
 
-        return $stmt;
+            $stmt = $conexao->prepare($sql);
+            $stmt->bindValue(1, $nome);
+            $stmt->bindValue(2, $cpf);
+            $stmt->bindValue(3, $senha);
+            $stmt->bindValue(4, $nascimento);
+            $stmt->bindValue(5, $cargo);
+            $stmt->bindValue(6, $status);
+            $stmt->execute();
+
+            return $stmt;
+        } else {
+            echo 'false';
+            return false;
+        }
+
+        
     }
 
     public function readFuncionario()

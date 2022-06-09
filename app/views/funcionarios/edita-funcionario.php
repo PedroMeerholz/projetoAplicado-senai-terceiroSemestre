@@ -31,7 +31,7 @@
                     <option value="2">Gerente</option>
                     <option value="3">Diretor</option>
                     <option value="4">Técnico</option>
-                    <option value="5">Estagiário</option>
+                    <option value="5">Estagiário</option>                   
                 </select>
                 Cargo Atual: <?php echo $registro['cargo']?>
                 <br>

@@ -12,6 +12,9 @@
 </head>
 <body>
     <div class="informacoes-gerais">
+        <h1>Seja Bem-Vindo, <?php echo $_SESSION['nome']?>!</h1>
+    </div>
+    <div class="informacoes-gerais">
         <h1>Informações Gerais</h1>
         <div class="informacoes-especificas informacoes-especificas-esquerda">
             <h2>Funcionários</h2>

@@ -19,6 +19,12 @@
 			<label for="entradaCpfFuncionario">CPF:</label>
 			<input type="number" name="entradaCpfFuncionario" id="entradaCpfFuncionario" minlength="11" maxlength="11" placeholder="12345678910" required>
 			<br>
+			<label for="entradaSenhaFuncionario">Senha:</label>
+			<input type="password" name="entradaSenhaFuncionario" id="entradaSenhaFuncionario" minlength="6">
+			<br>
+			<label for="entradaConfirmacaoSenhaFuncionario">Confirme a senha:</label>
+			<input type="password" name="entradaConfirmacaoSenhaFuncionario" id="entradaConfirmacaoSenhaFuncionario" minlength="6">
+			<br>
 			<label for="entradaNascimentoFuncionario">Nascimento:</label>
 			<input type="date" name="entradaNascimentoFuncionario" id="entradaNascimentoFuncionario" placeholder="13//11/2003" required>
 			<br>

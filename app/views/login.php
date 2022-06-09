@@ -49,10 +49,10 @@
             </div>
         </div>
         <div class="formulario-login">
-            <form class="login">
+            <form action="?router=Sessao/verificaCredenciaisLogin" method="post" class="login">
                 <div class="inputs-login">
                     <div class="input-row">
-                        <label class="label" for="entradaLogin">CPF:</label>
+                        <label class="label" for="entradaCpf">CPF:</label>
                         <input type="text" name="entradaCpf">
                     </div>
                     <br>

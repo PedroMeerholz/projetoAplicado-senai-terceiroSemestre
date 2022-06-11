@@ -19,7 +19,7 @@ class GerenciadorDeRotas
                 $this->controller = $rota[0];
                 unset($rota[0]);
             } else {
-                $this->controller = 'HomeDashboard';
+                $this->controller = 'Sessao';
             }
             
             $classe = '\\app\\controllers\\' . ucfirst($this->controller);
@@ -29,7 +29,7 @@ class GerenciadorDeRotas
                 $this->metodo = $rota[1];
                 unset($rota[2]);
             } else {
-                $this->metodo = 'home';
+                $this->metodo = 'login';
             }
 
             $this->parametro = $rota ? array_values($rota) : [];

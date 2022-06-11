@@ -14,7 +14,7 @@ class ManterFuncionario extends Funcionario
     public function registrarFuncionario()
     {
         $verificacao = new VerificacaoFuncionario;
-        $verifica = $verificacao->verificaDados();
+        $verifica = $verificacao->verificaDadosCadastro();
         if($verifica)
         {
             $registra = $this->createFuncionario();
@@ -38,8 +38,15 @@ class ManterFuncionario extends Funcionario
 
     public function alterarRegistroFuncionario()
     {
-        $this->updateFuncionario();
-        header('Location:?router=ManterFuncionario/consultaFuncionario/');
+        $verificacao = new VerificacaoFuncionario;
+        $verifica = $verificacao->verificaDadosEdicao();
+        if($verifica)
+        {
+            $edita = $this->updateFuncionario();
+            header('Location:?router=ManterFuncionario/consultaFuncionario');
+        } else {
+            echo 'Erro funcionou';
+        }
     }
 
     public function deletaFuncionario()

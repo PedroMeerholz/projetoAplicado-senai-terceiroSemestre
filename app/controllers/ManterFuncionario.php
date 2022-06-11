@@ -13,8 +13,15 @@ class ManterFuncionario extends Funcionario
 
     public function registrarFuncionario()
     {
-        $registra = $this->createFuncionario();
-        $this->cadastroFuncionario();
+        $verificacao = new VerificacaoFuncionario;
+        $verifica = $verificacao->verificaDados();
+        if($verifica)
+        {
+            $registra = $this->createFuncionario();
+            header('Location:?router=ManterFuncionario/cadastroFuncionario');
+        } else {
+            echo 'Erro funcionou';
+        }
     }
 
     public function consultaFuncionario()

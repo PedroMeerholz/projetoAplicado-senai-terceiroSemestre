@@ -34,11 +34,37 @@ class Funcionario extends Conexao
 
             return $stmt;
         } else {
-            echo 'false';
             return false;
         }
+    }
 
-        
+    public function flashErro()
+    {
+        echo 
+        '<div class="">
+            <p>Erro ao fazer cadastro de funcionário</p>
+            <p>Verifique se o nome digitado contém ao menos três letras</p>
+            <p>Verifique se o CPF difitado possui exatamente 11 números e não possui nenhum . ou -</p>
+            <p>Verifique se a senha possui ao menos seis caracteres</p>
+            <p>Verifique se a senha de confirmação está igual </p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>';
+    }
+
+    public function flash($nome = '', $mensagem = '', $class = 'form-message form-message-red') {
+        if(!empty($nome)) {
+            if(!empty($mensagem) && empty($_SESSION[$nome])) {
+                $_SESSION[$nome] = $mensagem;
+                $_SESSION[$nome.'_class'] = $class;
+            } else if(empty($mensagem) && !empty($_SESSION[$nome])) {
+                $class = !empty($_SESSION[$nome.'_class']) ? $_SESSION[$nome.'_class'] : $class;
+                echo '<div class="'.$class.'" >'.$_SESSION[$nome].'</div>';
+                unset($_SESSION[$nome]);
+                unset($_SESSION[$nome.'_class']);
+            }
+        }
     }
 
     public function readFuncionario()

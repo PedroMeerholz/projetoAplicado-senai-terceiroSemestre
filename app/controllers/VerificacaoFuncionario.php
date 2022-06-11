@@ -6,9 +6,9 @@ use app\models\Funcionario;
 
 class VerificacaoFuncionario
 {
-    public function verificaDados()
+    public function verificaDadosCadastro()
     {
-        if($this->verificaCampos())
+        if($this->verificaCamposCadastro())
         {
             return true;
         } else {
@@ -16,7 +16,17 @@ class VerificacaoFuncionario
         }
     }
 
-    public function verificaCampos() {
+    public function verificaDadosEdicao()
+    {
+        if($this->verificaCamposEdicao())
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function verificaCamposCadastro() {
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         
         $data = [
@@ -45,9 +55,35 @@ class VerificacaoFuncionario
         }
     }
 
-    private function verificaCamposVazios($nome, $cpf, $nascimento, $cargo, $senha, $senhaConfirmacao)
+    public function verificaCamposEdicao() {
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        
+        $data = [
+            'nome' => trim($_POST['entradaNomeFuncionario']),
+            'cpf' => trim($_POST['entradaCpfFuncionario']),
+            'nascimento' => trim($_POST['entradaNascimentoFuncionario']),
+            'cargo' => empty($_POST['entradaCargoFuncionario']) ? -1 : $_POST['entradaCargoFuncionario'],
+            'status' => empty($_POST['entradaStatusFuncionario']) ? -1 : $_POST['entradaStatusFuncionario']
+        ];
+
+        $camposVazios = $this->verificaCamposVazios($data['nome'], $data['cpf'], $data['nascimento'], $data['cargo']);
+        $nome = $this->verificaNome($data['nome']);
+        $nascimento = $this->verificaNascimento($data['nascimento']);
+        $cargo = $this->verificaCargo($data['cargo']);
+        $status = $this->verificaStatus($data['status']);
+        $cpf = $this->verificaCpf($data['cpf']);
+
+        if($camposVazios && $nome && $nascimento && $cargo && $status && $cpf)
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private function verificaCamposVazios($nome, $cpf, $nascimento, $cargo)
     {
-        if(empty($nome) || empty($cpf) || empty($nascimento) || empty($cargo) || empty($senha) || empty($senhaConfirmacao)){
+        if(empty($nome) || empty($cpf) || empty($nascimento) || empty($cargo)){
             return false;
         } else {
             return true;

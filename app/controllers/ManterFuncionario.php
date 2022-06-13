@@ -8,7 +8,16 @@ class ManterFuncionario extends Funcionario
 {
     public function cadastroFuncionario()
     {
+        $valores = [];
+        $erros = [];
+        if(isset($_SESSION['valores']))
+        {
+            $valores = $_SESSION['valores'];
+            $erros = $_SESSION['erros'];
+        }
         require_once __DIR__ . '/../views/funcionarios/cadastro-funcionario.php';
+        unset($_SESSION['valores']);
+        unset($_SESSION['erros']);
     }
 
     public function registrarFuncionario()
@@ -18,9 +27,26 @@ class ManterFuncionario extends Funcionario
         if($verifica)
         {
             $registra = $this->createFuncionario();
-            header('Location:?router=ManterFuncionario/cadastroFuncionario');
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('Funcionário cadastrado com sucesso')){
+                    window.location.href='?router=ManterFuncionario/cadastroFuncionario/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+            unset($_SESSION['valores']);
+            unset($_SESSION['erros']);
         } else {
-            echo 'Erro funcionou';
+            $erro = $_SESSION['erros'][0];
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('". $erro ."')){
+                    window.location.href='?router=ManterFuncionario/cadastroFuncionario/';
+                }
+            }
+            mostraMensagem();
+            </script>";
         }
     }
 

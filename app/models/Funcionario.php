@@ -38,32 +38,21 @@ class Funcionario extends Conexao
         }
     }
 
-    public function flashErro()
+    public function readCpfFuncionario($cpf)
     {
-        echo 
-        '<div class="">
-            <p>Erro ao fazer cadastro de funcionário</p>
-            <p>Verifique se o nome digitado contém ao menos três letras</p>
-            <p>Verifique se o CPF difitado possui exatamente 11 números e não possui nenhum . ou -</p>
-            <p>Verifique se a senha possui ao menos seis caracteres</p>
-            <p>Verifique se a senha de confirmação está igual </p>
-            <p></p>
-            <p></p>
-            <p></p>
-        </div>';
-    }
+        $sql = 'SELECT cpf FROM funcionario WHERE cpf=?;';
+        $conexao = $this->realizaConexao();
 
-    public function flash($nome = '', $mensagem = '', $class = 'form-message form-message-red') {
-        if(!empty($nome)) {
-            if(!empty($mensagem) && empty($_SESSION[$nome])) {
-                $_SESSION[$nome] = $mensagem;
-                $_SESSION[$nome.'_class'] = $class;
-            } else if(empty($mensagem) && !empty($_SESSION[$nome])) {
-                $class = !empty($_SESSION[$nome.'_class']) ? $_SESSION[$nome.'_class'] : $class;
-                echo '<div class="'.$class.'" >'.$_SESSION[$nome].'</div>';
-                unset($_SESSION[$nome]);
-                unset($_SESSION[$nome.'_class']);
-            }
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $cpf);
+        $stmt->execute();
+        
+        $resultado = $stmt->fetch();
+        if(empty($resultado))
+        {
+            return true;
+        } else {
+            return false;
         }
     }
 

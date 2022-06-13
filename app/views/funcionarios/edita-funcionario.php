@@ -27,8 +27,19 @@
                 <label for="entradaCargoFuncionario">Cargo:</label>
                 <select name="entradaCargoFuncionario" id="entradaCargoFuncionario">
                     <option value="" selected disabled></option>
-                    <option value="1">Motorista</option>
-                    <option value="2">Gerente</option>
+                    <?php if($registro['cargo'] == 1):?>
+                        <option value="1" selected>Motorista</option>
+                        <option value="2">Gerente</option>
+                        <option value="3">Diretor</option>
+                        <option value="4">Técnico</option>
+                        <option value="5">Estagiário</option>  
+                    <?php elseif($registro['cargo'] == 2):?>
+                        <option value="1">Motorista</option>
+                        <option value="2" selected>Gerente</option>
+                        <option value="3">Diretor</option>
+                        <option value="4">Técnico</option>
+                        <option value="5">Estagiário</option> 
+                    <?php endif;?>
                     <option value="3">Diretor</option>
                     <option value="4">Técnico</option>
                     <option value="5">Estagiário</option>                   

@@ -8,13 +8,50 @@ class ManterFuncionario extends Funcionario
 {
     public function cadastroFuncionario()
     {
+        $valores = [];
+        $erros = [];
+        if(isset($_SESSION['valores']))
+        {
+            $valores = $_SESSION['valores'];
+            $erros = $_SESSION['erros'];
+        }
         require_once __DIR__ . '/../views/funcionarios/cadastro-funcionario.php';
+        unset($_SESSION['valores']);
+        unset($_SESSION['erros']);
     }
 
     public function registrarFuncionario()
     {
-        $registra = $this->createFuncionario();
-        $this->cadastroFuncionario();
+        $verificacao = new VerificacaoFuncionario;
+        $verifica = $verificacao->verificaDadosCadastro();
+        if($verifica)
+        {
+            $registra = $this->createFuncionario();
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('Funcionário cadastrado com sucesso')){
+                    window.location.href='?router=ManterFuncionario/cadastroFuncionario/';
+                } else {
+                    window.location.href='?router=ManterFuncionario/cadastroFuncionario/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+            unset($_SESSION['valores']);
+            unset($_SESSION['erros']);
+        } else {
+            $erro = $_SESSION['erros'][0];
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('". $erro ."')){
+                    window.location.href='?router=ManterFuncionario/cadastroFuncionario/';
+                } else {
+                    window.location.href='?router=ManterFuncionario/cadastroFuncionario/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+        }
     }
 
     public function consultaFuncionario()
@@ -31,8 +68,15 @@ class ManterFuncionario extends Funcionario
 
     public function alterarRegistroFuncionario()
     {
-        $this->updateFuncionario();
-        header('Location:?router=ManterFuncionario/consultaFuncionario/');
+        $verificacao = new VerificacaoFuncionario;
+        $verifica = $verificacao->verificaDadosEdicao();
+        if($verifica)
+        {
+            $edita = $this->updateFuncionario();
+            header('Location:?router=ManterFuncionario/consultaFuncionario');
+        } else {
+            echo 'Erro funcionou';
+        }
     }
 
     public function deletaFuncionario()

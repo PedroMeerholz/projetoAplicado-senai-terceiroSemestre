@@ -34,11 +34,26 @@ class Funcionario extends Conexao
 
             return $stmt;
         } else {
-            echo 'false';
             return false;
         }
+    }
 
+    public function readCpfFuncionario($cpf)
+    {
+        $sql = 'SELECT cpf FROM funcionario WHERE cpf=?;';
+        $conexao = $this->realizaConexao();
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $cpf);
+        $stmt->execute();
         
+        $resultado = $stmt->fetch();
+        if(empty($resultado))
+        {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function readFuncionario()

@@ -14,10 +14,10 @@
 	<div class="formulario-cadastro">
 		<form action="?router=ManterFuncionario/registrarFuncionario/" method="post" class="cadastro" >
 			<label for="entradaNomeFuncionario">Nome Completo:</label>
-			<input type="text" name="entradaNomeFuncionario" id="entradaNomeFuncionario" placeholder="João da Silva" autofocus required>
+			<input type="text" name="entradaNomeFuncionario" id="entradaNomeFuncionario" placeholder="João da Silva" value="<?php echo empty($valores[0]) ? '' : $valores[0]?>" autofocus required>
 			<br>
 			<label for="entradaCpfFuncionario">CPF:</label>
-			<input type="number" name="entradaCpfFuncionario" id="entradaCpfFuncionario" minlength="11" maxlength="11" placeholder="12345678910" required>
+			<input type="number" name="entradaCpfFuncionario" id="entradaCpfFuncionario" minlength="11" maxlength="11" placeholder="12345678910" value="<?php echo empty($valores[1]) ? '' : $valores[1]?>" required>
 			<br>
 			<label for="entradaSenhaFuncionario">Senha:</label>
 			<input type="password" name="entradaSenhaFuncionario" id="entradaSenhaFuncionario" minlength="6">
@@ -26,7 +26,7 @@
 			<input type="password" name="entradaConfirmacaoSenhaFuncionario" id="entradaConfirmacaoSenhaFuncionario" minlength="6">
 			<br>
 			<label for="entradaNascimentoFuncionario">Nascimento:</label>
-			<input type="date" name="entradaNascimentoFuncionario" id="entradaNascimentoFuncionario" placeholder="13//11/2003" required>
+			<input type="date" name="entradaNascimentoFuncionario" id="entradaNascimentoFuncionario" value="<?php echo empty($valores[3]) ? '' : $valores[3]?>">
 			<br>
 			<label for="entradaCargoFuncionario">Cargo:</label>
 			<select name="entradaCargoFuncionario" id="entradaCargoFuncionario">
@@ -47,7 +47,7 @@
 			<br>
 			<div class="botoes">
 				<input type="submit" value="Confirmar" id="botao-confirmar" class="botao-operacao" name="enviaInformacoes">
-				<input type="reset" value="Limpar Campos" class="botao-operacao" name="limpaCampos">
+				<input type="button" value="Limpar Campos" class="botao-operacao" name="limpaCampos" onclick="location.reload()">
 			</div>
 		</form>
 	</div>

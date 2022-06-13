@@ -1,0 +1,12 @@
+#barra-navegacao {
+    background-color: #186ba6;
+    height: 10vh;
+}
+
+#barra-navegacao h1 {
+    font-weight: bolder;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 2%;
+}

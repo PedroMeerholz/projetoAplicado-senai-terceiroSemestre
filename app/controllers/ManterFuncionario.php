@@ -31,6 +31,8 @@ class ManterFuncionario extends Funcionario
             function mostraMensagem(){
                 if(confirm('Funcionário cadastrado com sucesso')){
                     window.location.href='?router=ManterFuncionario/cadastroFuncionario/';
+                } else {
+                    window.location.href='?router=ManterFuncionario/cadastroFuncionario/';
                 }
             }
             mostraMensagem();
@@ -42,6 +44,8 @@ class ManterFuncionario extends Funcionario
             echo "<script type='text/javascript'>
             function mostraMensagem(){
                 if(confirm('". $erro ."')){
+                    window.location.href='?router=ManterFuncionario/cadastroFuncionario/';
+                } else {
                     window.location.href='?router=ManterFuncionario/cadastroFuncionario/';
                 }
             }

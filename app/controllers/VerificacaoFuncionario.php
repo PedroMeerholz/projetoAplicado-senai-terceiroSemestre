@@ -145,8 +145,10 @@ class VerificacaoFuncionario
     {
         if(strlen($nome) >= 3)
         {
-            if(preg_match('/abcdef/', $nome))
-            return true;
+            if(filter_var($nome, FILTER_SANITIZE_NUMBER_INT) == '')
+            {
+                return true;
+            }
         } else {
             return false;
         }

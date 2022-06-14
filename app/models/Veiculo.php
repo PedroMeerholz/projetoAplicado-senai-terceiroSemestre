@@ -26,6 +26,24 @@ class Veiculo extends Conexao
         return $stmt;
     }
 
+    public function readPlacaVeiculo($placa)
+    {
+        $sql = 'SELECT placa FROM veiculo WHERE placa=?';
+        $conexao = $this->realizaConexao();
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $placa);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        if(empty($resultado))
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function readVeiculo()
     {
         $conexao = $this->realizaConexao();

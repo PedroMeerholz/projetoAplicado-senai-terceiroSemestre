@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\Veiculo;
+
 class VerificacaoVeiculo
 {
     protected $erros;
@@ -49,7 +51,7 @@ class VerificacaoVeiculo
         {
             array_push($this->valores, $dados['placa']);
         } else {
-            array_push($this->erros, 'Preencha corretamente a placa do veículo\n\nA placa deve estar no padrão ABC1D23');
+            array_push($this->erros, 'Preencha corretamente a placa do veículo\n\nA placa deve estar no padrão ABC1D23\nVerifique se algum veículo já cadastrado não possui a placa digitada');
             array_push($this->valores, $dados['placa']);
         }
 
@@ -100,9 +102,15 @@ class VerificacaoVeiculo
 
     private function verificaPlaca($placa)
     {
+        $veiculo = new Veiculo;
         if(strlen($placa) == 7)
         {
-            return true;
+            if($veiculo->readPlacaVeiculo($placa))
+            {
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }

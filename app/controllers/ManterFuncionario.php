@@ -68,15 +68,8 @@ class ManterFuncionario extends Funcionario
 
     public function alterarRegistroFuncionario()
     {
-        $verificacao = new VerificacaoFuncionario;
-        $verifica = $verificacao->verificaDadosEdicao();
-        if($verifica)
-        {
-            $edita = $this->updateFuncionario();
-            header('Location:?router=ManterFuncionario/consultaFuncionario');
-        } else {
-            echo 'Erro funcionou';
-        }
+        $edita = $this->updateFuncionario();
+        header('Location:?router=ManterFuncionario/consultaFuncionario');
     }
 
     public function deletaFuncionario()

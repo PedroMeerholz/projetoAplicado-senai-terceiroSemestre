@@ -107,6 +107,40 @@ class Chamado extends Conexao
         $stmt->bindValue(3, $status_chamado);
         $stmt->bindValue(4, $id);
         $stmt->execute();
+
+        if($status_chamado == 4)
+        {
+            $stmt = $conexao->prepare('CALL `atualiza_status-chamado_finalizado`(?, ?);');
+            $stmt->bindValue(1, $id);
+            $stmt->bindValue(2, 1);
+            $stmt->execute();
+        }
+    }
+
+    public function verificaFuncionarioAlocado($id_chamado)
+    {
+        $sql = 'SELECT funcionario FROM chamado WHERE id_chamado=?;';
+        $conexao = $this->realizaConexao();
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $id_chamado);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        return $resultado;
+    }
+
+    public function verificaVeiculoAlocado($id_chamado)
+    {
+        $sql = 'SELECT veiculo FROM chamado WHERE id_chamado=?;';
+        $conexao = $this->realizaConexao();
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $id_chamado);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+        return $resultado;
     }
 
     private function calculaCarbono($distancia, $autonomia)

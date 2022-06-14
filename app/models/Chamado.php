@@ -116,10 +116,7 @@ class Chamado extends Conexao
 
         if($status_chamado == 4)
         {
-            $stmt = $conexao->prepare('CALL `atualiza_status-chamado_finalizado`(?, ?);');
-            $stmt->bindValue(1, $id);
-            $stmt->bindValue(2, 1);
-            $stmt->execute();
+            $this->chamaStoredProcedureChamadoFinalizado($id);
         }
     }
 
@@ -160,14 +157,24 @@ class Chamado extends Conexao
     public function deleteChamado()
     {
         $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
+        $this->chamaStoredProcedureChamadoDeletado($id);
+    }
 
+    public function chamaStoredProcedureChamadoFinalizado($id)
+    {
         $conexao = $this->realizaConexao();
-        $sql = 'DELETE FROM chamado WHERE id_chamado = ?;';
-
-        $stmt = $conexao->prepare($sql);
+        $stmt = $conexao->prepare('call `atualiza_status-chamado_finalizado`(?, ?);');
         $stmt->bindValue(1, $id);
+        $stmt->bindValue(2, 1);
         $stmt->execute();
+    }
 
-        return $stmt;
+    public function chamaStoredProcedureChamadoDeletado($id)
+    {
+        $conexao = $this->realizaConexao();
+        $stmt = $conexao->prepare('call `atualiza_status-chamado_deletado`(?, ?);');
+        $stmt->bindValue(1, $id);
+        $stmt->bindValue(2, 1);
+        $stmt->execute();
     }
 }

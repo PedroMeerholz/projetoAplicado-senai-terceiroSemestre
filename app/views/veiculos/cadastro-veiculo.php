@@ -45,7 +45,7 @@
 			<br>
 			<div class="botoes">
 				<input type="submit" value="Confirmar" class="botao-operacao" id="botao-confirmar" name="enviaInformacoes">
-				<input type="reset" value="Limpar Campos" class="botao-operacao" name="limpaCampos">
+				<input type="button" value="Limpar Campos" class="botao-operacao" name="limpaCampos" onclick="location.reload()">
 			</div>
 		</form>
 	</div>

@@ -8,13 +8,50 @@ class ManterVeiculo extends Veiculo
 {
     public function cadastroVeiculo()
     {
+        $valores = [];
+        $erros = [];
+        if(isset($_SESSION['valoresVeiculo']))
+        {
+            $valores = $_SESSION['valoresVeiculo'];
+            $erros = $_SESSION['errosVeiculo'];
+        }
         require_once __DIR__ . '/../views/veiculos/cadastro-veiculo.php';
+        unset($_SESSION['valoresVeiculo']);
+        unset($_SESSION['errosVeiculo']);
     }
 
     public function registrarVeiculo()
     {
-        $registra = $this->createVeiculo();
-        header('Location:?router=ManterVeiculo/cadastroVeiculo');
+        $verificacao = new VerificacaoVeiculo;
+        $verifica = $verificacao->verificaDadosCadastro();
+        if($verifica)
+        {
+            $registra = $this->createVeiculo();
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('Veículo cadastrado com sucesso')){
+                    window.location.href='?router=ManterVeiculo/cadastroVeiculo/';
+                } else {
+                    window.location.href='?router=ManterVeiculo/cadastroVeiculo/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+            unset($_SESSION['valoresVeiculo']);
+            unset($_SESSION['errosVeiculo']);
+        } else {
+            $erro = $_SESSION['errosVeiculo'][0];
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('". $erro ."')){
+                    window.location.href='?router=ManterVeiculo/cadastroVeiculo/';
+                } else {
+                    window.location.href='?router=ManterVeiculo/cadastroVeiculo/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+        }
     }
 
     public function consultaVeiculo()

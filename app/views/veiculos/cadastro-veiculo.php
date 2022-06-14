@@ -14,13 +14,13 @@
 	<div class="formulario-cadastro">
 		<form action="?router=ManterVeiculo/registrarVeiculo/" method="post" class="cadastro">
 			<label for="entradaPlacaVeiculo">Placa:</label>
-			<input type="text" name="entradaPlacaVeiculo" id="entradaPlacaVeiculo" placeholder="BRA3R52" autofocus required>
+			<input type="text" name="entradaPlacaVeiculo" id="entradaPlacaVeiculo" placeholder="BRA3R52" value="<?php echo empty($valores[0]) ? '' : $valores[0];?>" autofocus required>
 			<br>
 			<label for="entradaAnoVeiculo">Ano:</label>
-			<input type="number" name="entradaAnoVeiculo" id="entradaAnoVeiculo" min="2000" max="2022" placeholder="2000" required>
+			<input type="number" name="entradaAnoVeiculo" id="entradaAnoVeiculo" min="2000" placeholder="2000" value="<?php echo empty($valores[1]) ? '' : $valores[1];?>" required>
 			<br>
 			<label for="entradaAutonomiaVeiculo">Autonomia:</label>
-			<input type="number" name="entradaAutonomiaVeiculo" id="entradaAutonomiaVeiculo" value="1" placeholder="9.9" required>
+			<input type="number" name="entradaAutonomiaVeiculo" id="entradaAutonomiaVeiculo" step="0.01" placeholder="9.9" value="<?php echo empty($valores[2]) ? '' : $valores[2];?>"required>
 			<br>
 			<label for="entradaModeloVeiculo">Modelo:</label>
 			<select name="entradaModeloVeiculo" id="entradaModeloVeiculo" required>
@@ -45,7 +45,7 @@
 			<br>
 			<div class="botoes">
 				<input type="submit" value="Confirmar" class="botao-operacao" id="botao-confirmar" name="enviaInformacoes">
-				<input type="reset" value="Limpar Campos" class="botao-operacao" name="limpaCampos">
+				<input type="button" value="Limpar Campos" class="botao-operacao" name="limpaCampos" onclick="location.reload()">
 			</div>
 		</form>
 	</div>

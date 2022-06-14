@@ -48,6 +48,12 @@ class Chamado extends Conexao
         $stmt->bindValue(3, 3);
         $stmt->execute();
 
+        $atualizaFuncionario = new Funcionario;
+        $atualizaFuncionario->updateStatusFuncionario(2, $funcionario);
+
+        $atualizaVeiculo = new Veiculo;
+        $atualizaVeiculo->updateStatusVeiculo(2, $veiculo);
+
         return $stmt;
     }
 

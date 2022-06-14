@@ -116,6 +116,17 @@ class Funcionario extends Conexao
         $stmt->execute();
     }
 
+    public function updateStatusFuncionario($status, $id)
+    {
+        $sql = 'UPDATE funcionario SET status_funcionario=? WHERE id_funcionario=?;';
+        $conexao = $this->realizaConexao();
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $status);
+        $stmt->bindValue(2, $id);
+        $stmt->execute();
+    }
+
     public function deleteFuncionario()
     {
         $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));

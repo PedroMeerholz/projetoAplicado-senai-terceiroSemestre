@@ -99,6 +99,17 @@ class Veiculo extends Conexao
         $stmt->execute();
     }
 
+    public function updateStatusVeiculo($status, $id)
+    {
+        $sql = 'UPDATE veiculo SET status_veiculo=? WHERE id_veiculo=?;';
+        $conexao = $this->realizaConexao();
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(1, $status);
+        $stmt->bindValue(2, $id);
+        $stmt->execute();
+    }
+
     public function deleteVeiculo()
     {
         $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));

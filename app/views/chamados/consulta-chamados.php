@@ -27,16 +27,29 @@
                 </thead>
                 <tbody class="conteudo-tabela-consulta">
                     <?php foreach($consulta as $registro):?>
-                        <tr>
-                            <td><?php echo $registro['data_chamado'];?></td>
-                            <td><?php echo $registro['funcionario'];?></td>
-                            <td><?php echo $registro['modelo_veiculo'];?>(<?php echo $registro['placa_veiculo'];?>)</td>
-                            <td><?php echo $registro['distancia'];?></td>
-                            <td><?php echo $registro['carbono'];?></td>
-                            <td><?php echo $registro['status_chamado'];?></td>
-                            <td><a class="acoes-consulta" href="?router=ManterChamado/editaChamado/&id=<?php echo base64_encode($registro['id_chamado'])?>">Editar</a></td>
-                            <td><a class="acoes-consulta" href="?router=ManterChamado/deletaChamado/&id=<?php echo base64_encode($registro['id_chamado'])?>">Remover</a></td>
-                        </tr>
+                        <?php if($registro['status_chamado'] == 'Em Aberto'):?>
+                            <tr>
+                                <td><?php echo $registro['data_chamado'];?></td>
+                                <td><?php echo $registro['funcionario'];?></td>
+                                <td><?php echo $registro['modelo_veiculo'];?>(<?php echo $registro['placa_veiculo'];?>)</td>
+                                <td><?php echo $registro['distancia'];?></td>
+                                <td><?php echo $registro['carbono'];?></td>
+                                <td><?php echo $registro['status_chamado'];?></td>
+                                <td><a class="acoes-consulta" href="?router=ManterChamado/editaChamado/&id=<?php echo base64_encode($registro['id_chamado'])?>">Editar</a></td>
+                                <td><a class="acoes-consulta" href="?router=ManterChamado/deletaChamado/&id=<?php echo base64_encode($registro['id_chamado'])?>">Remover</a></td>
+                            </tr>
+                        <?php endif;?>
+                        <?php if($registro['status_chamado'] == 'Finalizado'):?>
+                            <tr>
+                                <td><?php echo $registro['data_chamado'];?></td>
+                                <td><?php echo $registro['funcionario'];?></td>
+                                <td><?php echo $registro['modelo_veiculo'];?>(<?php echo $registro['placa_veiculo'];?>)</td>
+                                <td><?php echo $registro['distancia'];?></td>
+                                <td><?php echo $registro['carbono'];?></td>
+                                <td><?php echo $registro['status_chamado'];?></td>
+                                <td colspan="2"></td>
+                            </tr>
+                        <?php endif;?>
                     <?php endforeach;?>
                 </tbody>
             </table>

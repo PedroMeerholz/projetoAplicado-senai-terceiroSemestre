@@ -13,24 +13,24 @@
 	<h1>Abertura de Chamados</h1>
 	<form action="?router=ManterChamado/registrarChamado/>" method="post" class="box-principal">
 		<div class="box-secundario">
-				<table class="tabela-funcionario">
-					<thead>
+			<table class="tabela-funcionario">
+				<thead>
+					<tr>
+						<td></td>
+						<td class="titulo-coluna">Nome</td>
+						<td class="titulo-coluna">Cargo</td>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach($consultaFuncionario as $registro):?>
 						<tr>
-							<td></td>
-							<td class="titulo-coluna">Nome</td>
-							<td class="titulo-coluna">Cargo</td>
+							<td><input type="radio" name="funcionarioSelecionado" value="<?php echo $registro['id_funcionario'];?>" checked></td>
+							<td class="nome-funcionario"><?php echo $registro['nome']?></td>
+							<td class="cargo-funcionario"><?php echo $registro['cargo']?></td>
 						</tr>
-					</thead>
-					<tbody>
-						<?php foreach($consultaFuncionario as $registro):?>
-							<tr>
-								<td><input type="radio" name="funcionarioSelecionado" value="<?php echo $registro['id_funcionario'];?>" checked></td>
-								<td class="nome-funcionario"><?php echo $registro['nome']?></td>
-								<td class="cargo-funcionario"><?php echo $registro['cargo']?></td>
-							</tr>
-						<?php endforeach;?>
-					</tbody>
-				</table>
+					<?php endforeach;?>
+				</tbody>
+			</table>
 			<br>
 			<table class="tabela-veiculo">
 				<thead>

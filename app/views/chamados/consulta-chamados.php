@@ -16,7 +16,7 @@
             <table class="tabela-consulta">
                 <thead class="cabecalho-tabela-consulta">
                     <tr class="linha-cabecalho-tabela-consulta">
-                        <td>Data</td>
+                        <td>Data e Hora</td>
                         <td>Funcionário</td>
                         <td>Veículo</td>
                         <td>Distancia(Km)</td>

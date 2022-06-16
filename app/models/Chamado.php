@@ -117,6 +117,9 @@ class Chamado extends Conexao
         if($status_chamado == 4)
         {
             $this->chamaStoredProcedureChamadoFinalizado($id);
+            return true;
+        } else if($status_chamado == 3) {
+            return true;
         }
     }
 

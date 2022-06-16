@@ -16,7 +16,7 @@
             <?php foreach($edita as $registro_chamado):?>
                 <input type="hidden" name="id" value="<?php echo $registro_chamado['id_chamado']?>">
                 <label for="entradaDistanciaChamado">Distância:</label>
-                <input type="number" name="entradaDistanciaChamado" id="entradaDistanciaChamado" placeholder="25.2" value="<?php echo $registro_chamado['distancia'];?>" autofocus required> Km
+                <input type="number" name="entradaDistanciaChamado" id="entradaDistanciaChamado" placeholder="25.2" step="0.01"value="<?php echo $registro_chamado['distancia'];?>" autofocus required> Km
                 <br>
                 <label for="entradaStatusChamado">Status:</label>
                 <select name="entradaStatusChamado" id="entradaStatusChamado" required>

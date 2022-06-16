@@ -16,7 +16,16 @@ class ManterChamado extends Chamado
     public function registrarChamado()
     {
         $registra = $this->createChamado();
-        header('Location:?router=ManterChamado/aberturaChamado/');
+        echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('Chamado aberto com sucesso')){
+                    window.location.href='?router=ManterChamado/aberturaChamado/';
+                } else {
+                    window.location.href='?router=ManterChamado/aberturaChamado/';
+                }
+            }
+            mostraMensagem();
+            </script>";
     }
 
     public function consultaChamado()
@@ -33,8 +42,20 @@ class ManterChamado extends Chamado
 
     public function alterarRegistroChamado()
     {
-        $this->updateChamado();
-        header('Location:?router=ManterChamado/consultaChamado/');
+        $atualiza = $this->updateChamado();
+        if($atualiza)
+        {
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('Chamado atualizado com sucesso')){
+                    window.location.href='?router=ManterChamado/aberturaChamado/';
+                } else {
+                    window.location.href='?router=ManterChamado/aberturaChamado/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+        }
     }
 
     public function deletaChamado()

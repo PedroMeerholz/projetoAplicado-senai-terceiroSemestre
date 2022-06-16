@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <div class="informacoes-gerais">
+    <div class="bem-vindo">
         <h1>Seja Bem-Vindo, <?php echo $_SESSION['nome']?>!</h1>
     </div>
     <div class="informacoes-gerais">

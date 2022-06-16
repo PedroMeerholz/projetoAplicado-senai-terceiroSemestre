@@ -1,3 +1,23 @@
+.bem-vindo {
+    margin-top: 5%;
+    margin-right: 20%;
+    margin-left: 20%;
+    padding-top: 1%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.bem-vindo h1 {
+    text-decoration: underline;
+}
+
 .informacoes-gerais {
     background-color: #e0e0e0;
     margin-top: 5%;
@@ -9,13 +29,6 @@
     padding-left: 5%;
     border: none;
     border-radius: 3px;
-}
-
-h1 {
-    font-weight: bolder;
-    font-size: 25px;
-    text-align: center;
-    margin-bottom: 5%;
 }
 
 .informacoes-especificas {

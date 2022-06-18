@@ -1,0 +1,29 @@
+body {
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bolder;
+    margin-bottom: 4%;
+}
+
+#informacoes-do-relatorio, #informacoes-dos-chamados h1{
+    text-align: center;
+}
+
+hr {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#informacoes-dos-chamados p {
+    margin-bottom: 2%;
+}
+
+#data-relatorio {
+    text-align: center;
+}

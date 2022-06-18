@@ -26,22 +26,61 @@
                 <br>
                 <label for="entradaCargoFuncionario">Cargo:</label>
                 <select name="entradaCargoFuncionario" id="entradaCargoFuncionario">
-                    <option value="" selected disabled></option>
-                    <option value="1">Motorista</option>
-                    <option value="2">Gerente</option>
-                    <option value="3">Diretor</option>
-                    <option value="4">Técnico</option>
-                    <option value="5">Estagiário</option>                     
+                    <?php if($registro['cargo'] == 'Motorista'):?>
+                        <option value="" disabled></option>
+                        <option value="1" selected>Motorista</option>
+                        <option value="2">Gerente</option>
+                        <option value="3">Diretor</option>
+                        <option value="4">Técnico</option>
+                        <option value="5">Estagiário</option>
+                    <?php endif;?>
+                    <?php if($registro['cargo'] == 'Gerente'):?>
+                        <option value="" disabled></option>
+                        <option value="1">Motorista</option>
+                        <option value="2" selected>Gerente</option>
+                        <option value="3">Diretor</option>
+                        <option value="4">Técnico</option>
+                        <option value="5">Estagiário</option>
+                    <?php endif;?>
+                    <?php if($registro['cargo'] == 'Diretor'):?>
+                        <option value="" disabled></option>
+                        <option value="1">Motorista</option>
+                        <option value="2">Gerente</option>
+                        <option value="3" selected>Diretor</option>
+                        <option value="4">Técnico</option>
+                        <option value="5">Estagiário</option>
+                    <?php endif;?>
+                    <?php if($registro['cargo'] == 'Técnico'):?>
+                        <option value="" disabled></option>
+                        <option value="1">Motorista</option>
+                        <option value="2">Gerente</option>
+                        <option value="3">Diretor</option>
+                        <option value="4" selected>Técnico</option>
+                        <option value="5">Estagiário</option>
+                    <?php endif;?>
+                    <?php if($registro['cargo'] == 'Estagiário'):?>
+                        <option value="" disabled></option>
+                        <option value="1">Motorista</option>
+                        <option value="2">Gerente</option>
+                        <option value="3">Diretor</option>
+                        <option value="4">Técnico</option>
+                        <option value="5" selected>Estagiário</option>
+                    <?php endif;?>                  
                 </select>
-                Cargo Atual: <?php echo $registro['cargo']?>
                 <br>
                 <label for="entradaStatusFuncionario">Status:</label>
                 <select name="entradaStatusFuncionario" id="entradaStatusFuncionario">
-                    <option value="" selected disabled></option>
-                    <option value="1">Disponível</option>
-                    <option value="2">Indisponível</option>
+                    <?php if($registro['status_funcionario'] == 'Disponível'):?>
+                        <option value="" disabled></option>
+                        <option value="1" selected>Disponível</option>
+                        <option value="2">Indisponível</option>
+                    <?php endif;?>
+                    <?php if($registro['status_funcionario'] == 'Indisponível'):?>
+                        <option value="" disabled></option>
+                        <option value="1">Disponível</option>
+                        <option value="2" selected>Indisponível</option>
+                    <?php endif;?>
                 </select>
-                Status Atual: <?php echo $registro['status_funcionario']?>
                 <br>
                 <div class="botoes">
                     <input type="submit" value="Confirmar" id="botao-confirmar" class="botao-operacao" name="enviaInformacoes">

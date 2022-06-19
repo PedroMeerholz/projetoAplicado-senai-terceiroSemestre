@@ -75,7 +75,7 @@ class ManterVeiculo extends Veiculo
             $registra = $this->updateVeiculo();
             echo "<script type='text/javascript'>
             function mostraMensagem(){
-                if(confirm('Veículo cadastrado com sucesso')){
+                if(confirm('Veículo atualizado com sucesso')){
                     window.location.href='?router=ManterVeiculo/consultaVeiculo/';
                 } else {
                     window.location.href='?router=ManterVeiculo/consultaVeiculo/';
@@ -83,10 +83,10 @@ class ManterVeiculo extends Veiculo
             }
             mostraMensagem();
             </script>";
-            unset($_SESSION['valoresVeiculo']);
-            unset($_SESSION['errosVeiculo']);
+            unset($_SESSION['valoresVeiculoUpdate']);
+            unset($_SESSION['errosVeiculoUpdate']);
         } else {
-            $erro = $_SESSION['errosVeiculo'][0];
+            $erro = $_SESSION['errosVeiculoUpdate'][0];
             echo "<script type='text/javascript'>
             function mostraMensagem(){
                 if(confirm('". $erro ."')){

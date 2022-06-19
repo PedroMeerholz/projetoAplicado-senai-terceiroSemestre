@@ -33,7 +33,7 @@ class VerificacaoVeiculo
         ];
 
         $camposNaoVazios = $this->verificaCamposVazios($dados['placa'], $dados['ano'], $dados['autonomia'], $dados['modelo'], $dados['status']);
-        $placa = $this->verificaPlaca($dados['placa']);
+        $placa = $this->verificaPlacaAtualizacao($dados['placa']);
         $ano = $this->verificaAno($dados['ano']);
         $autonomia = $this->verificaAutonomia(['autonomia']);
         $modelo = $this->verificaModelo($dados['modelo']);
@@ -85,8 +85,8 @@ class VerificacaoVeiculo
         {
             return true;
         } else {
-            $_SESSION['valoresVeiculo'] = $this->valores;
-            $_SESSION['errosVeiculo'] = $this->erros;
+            $_SESSION['valoresVeiculoUpdate'] = $this->valores;
+            $_SESSION['errosVeiculoUpdate'] = $this->erros;
             return false;
         }
     }

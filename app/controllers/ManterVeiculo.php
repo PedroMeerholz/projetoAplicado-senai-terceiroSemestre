@@ -109,7 +109,32 @@ class ManterVeiculo extends Veiculo
 
     public function deletarRegistroVeiculo()
     {
-        $deleta = $this->deleteVeiculo();
-        header('Location:?router=ManterVeiculo/consultaVeiculo');
+        $verificacao = new VerificaExclusaoVeiculo;
+        $verifica = $verificacao->verificaVinculoComChamado(base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS)));
+        if($verifica)
+        {
+            $deleta = $this->deleteVeiculo();
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('Veículo deletado com sucesso')){
+                    window.location.href='?router=ManterVeiculo/consultaVeiculo/';
+                } else {
+                    window.location.href='?router=ManterVeiculo/consultaVeiculo/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+        } else {
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('O veículo selecionado não pode ser excluído pois está vinculado a algum chamado')){
+                    window.location.href='?router=ManterVeiculo/consultaVeiculo/';
+                } else {
+                    window.location.href='?router=ManterVeiculo/consultaVeiculo/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+        }
     }
 }

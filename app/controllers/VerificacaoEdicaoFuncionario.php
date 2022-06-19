@@ -83,7 +83,7 @@ class VerificacaoEdicaoFuncionario extends VerificacaoFuncionario
         {
             return true;
         } else {
-            $_SESSION['valores'] = $this->valores;
+            $_SESSION['valores_edicao_funcionario'] = $this->valores;
             $_SESSION['erros'] = $this->erros;
             return false;
         }

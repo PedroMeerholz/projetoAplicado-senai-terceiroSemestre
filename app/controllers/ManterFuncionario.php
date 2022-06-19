@@ -22,7 +22,7 @@ class ManterFuncionario extends Funcionario
 
     public function registrarFuncionario()
     {
-        $verificacao = new VerificacaoFuncionario;
+        $verificacao = new VerificacaoCadastroFuncionario;
         $verifica = $verificacao->verificaDadosCadastro();
         if($verifica)
         {
@@ -68,8 +68,34 @@ class ManterFuncionario extends Funcionario
 
     public function alterarRegistroFuncionario()
     {
-        $edita = $this->updateFuncionario();
-        header('Location:?router=ManterFuncionario/consultaFuncionario');
+        $verificacao = new VerificacaoEdicaoFuncionario;
+        $verifica = $verificacao->verificaDadosEdicao();
+        if($verifica)
+        {
+            $atualiza = $this->updateFuncionario();
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('Funcionário atualizado com sucesso')){
+                    window.location.href='?router=ManterFuncionario/consultaFuncionario/';
+                } else {
+                    window.location.href='?router=ManterFuncionario/consultaFuncionario/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+        } else {
+            $erro = $_SESSION['erros'][0];
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('". $erro ."')){
+                    window.location.href='?router=ManterFuncionario/consultaFuncionario/';
+                } else {
+                    window.location.href='?router=ManterFuncionario/consultaFuncionario/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+        }
     }
 
     public function deletaFuncionario()

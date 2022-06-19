@@ -26,26 +26,68 @@
                 <br>
                 <label for="entradaModeloVeiculo">Modelo:</label>
                 <select name="entradaModeloVeiculo" id="entradaModeloVeiculo">
-                    <optgroup name="modelo">
-                        <option value="" selected disabled></option>
-                        <option value="1">Strada</option>
-                        <option value="2">Fiorino</option>
-                        <option value="3">Uno</option>
-                        <option value="4">Pálio</option>
-                        <option value="5">Logan</option>
-                    </optgroup>
+                    <?php if($registro['modelo'] == 'Strada'):?>
+                        <optgroup name="modelo">
+                            <option value="1" selected>Strada</option>
+                            <option value="2">Fiorino</option>
+                            <option value="3">Uno</option>
+                            <option value="4">Pálio</option>
+                            <option value="5">Logan</option>
+                        </optgroup>
+                    <?php endif;?>
+                    <?php if($registro['modelo'] == 'Fiorino'):?>
+                        <optgroup name="modelo">
+                            <option value="1">Strada</option>
+                            <option value="2" selected>Fiorino</option>
+                            <option value="3">Uno</option>
+                            <option value="4">Pálio</option>
+                            <option value="5">Logan</option>
+                        </optgroup>
+                    <?php endif;?>
+                    <?php if($registro['modelo'] == 'Uno'):?>
+                        <optgroup name="modelo">
+                            <option value="1">Strada</option>
+                            <option value="2">Fiorino</option>
+                            <option value="3" selected>Uno</option>
+                            <option value="4">Pálio</option>
+                            <option value="5">Logan</option>
+                        </optgroup>
+                    <?php endif;?>
+                    <?php if($registro['modelo'] == 'Pálio'):?>
+                        <optgroup name="modelo">
+                            <option value="1">Strada</option>
+                            <option value="2">Fiorino</option>
+                            <option value="3">Uno</option>
+                            <option value="4" selected>Pálio</option>
+                            <option value="5">Logan</option>
+                        </optgroup>
+                    <?php endif;?>
+                    <?php if($registro['modelo'] == 'Logan'):?>
+                        <optgroup name="modelo">
+                            <option value="1">Strada</option>
+                            <option value="2">Fiorino</option>
+                            <option value="3">Uno</option>
+                            <option value="4">Pálio</option>
+                            <option value="5" selected>Logan</option>
+                        </optgroup>
+                    <?php endif;?>
                 </select>
-                Modelo Atual: <?php echo $registro['modelo']?>
                 <br>
                 <label for="entradaStatusVeiculo">Status:</label>
                 <select name="entradaStatusVeiculo" id="entradaStatusVeiculo" required>
-                    <optgroup name="status">
-                        <option value="" selected disabled></option>
-                        <option value="1">Disponível</option>
-                        <option value="2">Indisponível</option>
-                    </optgroup>
+                    <?php if($registro['status_veiculo'] == 'Disponível'):?>
+                        <optgroup name="status">
+                            <option value="1" selected>Disponível</option>
+                            <option value="2">Indisponível</option>
+                        </optgroup>
+                    <?php endif;?>
+                    <?php if($registro['status_veiculo'] == 'Indisponível'):?>
+                        <optgroup name="status">
+                            <option value="1">Disponível</option>
+                            <option value="2" selected>Indisponível</option>
+                        </optgroup>
+                    <?php endif;?>
                 </select>
-                Status Atual: <?php echo $registro['status_veiculo']?>
                 <br>
                 <div class="botoes">
                     <input type="submit" value="Confirmar" id="botao-confirmar" class="botao-operacao" name="enviaInformacoes">

@@ -23,7 +23,7 @@ class ManterVeiculo extends Veiculo
     public function registrarVeiculo()
     {
         $verificacao = new VerificacaoVeiculo;
-        $verifica = $verificacao->verificaDadosCadastro();
+        $verifica = $verificacao->verificaDados();
         if($verifica)
         {
             $registra = $this->createVeiculo();
@@ -68,8 +68,36 @@ class ManterVeiculo extends Veiculo
 
     public function alterarRegistroVeiculo()
     {
-        $this->updateVeiculo();
-        header('Location:?router=ManterVeiculo/consultaVeiculo/');
+        $verificacao = new VerificacaoVeiculo;
+        $verifica = $verificacao->verificaDados();
+        if($verifica)
+        {
+            $registra = $this->updateVeiculo();
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('Veículo cadastrado com sucesso')){
+                    window.location.href='?router=ManterVeiculo/consultaVeiculo/';
+                } else {
+                    window.location.href='?router=ManterVeiculo/consultaVeiculo/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+            unset($_SESSION['valoresVeiculo']);
+            unset($_SESSION['errosVeiculo']);
+        } else {
+            $erro = $_SESSION['errosVeiculo'][0];
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('". $erro ."')){
+                    window.location.href='?router=ManterVeiculo/consultaVeiculo/';
+                } else {
+                    window.location.href='?router=ManterVeiculo/consultaVeiculo/';
+                }
+            }
+            mostraMensagem();
+            </script>";
+        }
     }
 
     public function deletaVeiculo()

@@ -10,9 +10,9 @@ class VerificacaoVeiculo
     protected $valores;
     protected $veiculo;
 
-    public function verificaDadosCadastro()
+    public function verificaDados()
     {
-        if($this->verificaCamposCadastro())
+        if($this->verificaCampos())
         {
             return true;
         } else {
@@ -20,7 +20,7 @@ class VerificacaoVeiculo
         }
     }
 
-    public function verificaCamposCadastro()
+    public function verificaCampos()
     {
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -106,6 +106,22 @@ class VerificacaoVeiculo
         if(strlen($placa) == 7)
         {
             if($veiculo->readPlacaVeiculo($placa))
+            {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    private function verificaPlacaAtualizacao($placa)
+    {
+        $veiculo = new Veiculo;
+        if(strlen($placa) == 7)
+        {
+            if($veiculo->readPlacaVeiculoUpdate($placa))
             {
                 return true;
             } else {

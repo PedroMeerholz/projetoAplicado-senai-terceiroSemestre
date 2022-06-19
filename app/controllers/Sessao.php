@@ -18,7 +18,17 @@ class Sessao extends Login
         {
             header('Location:?router=HomeDashboard/home');
         } else {
-            echo 'Credenciais Inválidas';
+            $erro = 'Credenciais inválidas\n\nO CPF deve conter onze(11) números\nA senha deve conter ao menos seis caracteres';
+            echo "<script type='text/javascript'>
+            function mostraMensagem(){
+                if(confirm('". $erro ."')){
+                    window.location.href='?router=Sessao/login';
+                } else {
+                    window.location.href='?router=Sessao/login';
+                }
+            }
+            mostraMensagem();
+            </script>";
         }
     }
 

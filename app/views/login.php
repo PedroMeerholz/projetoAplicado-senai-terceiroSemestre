@@ -53,7 +53,7 @@
                 <div class="inputs-login">
                     <div class="input-row">
                         <label class="label" for="entradaCpf">CPF:</label>
-                        <input type="text" name="entradaCpf">
+                        <input type="text" name="entradaCpf" placeholder="12345678910">
                     </div>
                     <br>
                     <div class="input-row">

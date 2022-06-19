@@ -111,7 +111,7 @@ class ManterFuncionario extends Funcionario
         $verifica = $verificacao->verificaVinculoComChamado(base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS)));
         if($verifica)
         {
-            $registra = $this->deleteFuncionario();
+            $deleta = $this->deleteFuncionario();
             echo "<script type='text/javascript'>
             function mostraMensagem(){
                 if(confirm('Funcionário deletado com sucesso')){

@@ -4,13 +4,18 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit64cb40cfdea8ef1d811401567b3f61b7
+class ComposerStaticInite1e8b8d58ed83aee5a6918d676d13770
 {
     public static $files = array (
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'ef7ca0904b63defd76e58ac67b0922b9' => __DIR__ . '/../..' . '/config/config.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        's' => 
+        array (
+            'setasign\\Fpdi\\' => 14,
+        ),
         'c' => 
         array (
             'core\\' => 5,
@@ -24,6 +29,19 @@ class ComposerStaticInit64cb40cfdea8ef1d811401567b3f61b7
             'Svg\\' => 4,
             'Sabberworm\\CSS\\' => 15,
         ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
+            'Psr\\Http\\Message\\' => 17,
+        ),
+        'M' => 
+        array (
+            'Mpdf\\' => 5,
+        ),
+        'H' => 
+        array (
+            'Http\\Message\\' => 13,
+        ),
         'F' => 
         array (
             'FontLib\\' => 8,
@@ -31,10 +49,15 @@ class ComposerStaticInit64cb40cfdea8ef1d811401567b3f61b7
         'D' => 
         array (
             'Dompdf\\' => 7,
+            'DeepCopy\\' => 9,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'setasign\\Fpdi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/setasign/fpdi/src',
+        ),
         'core\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core',
@@ -51,6 +74,22 @@ class ComposerStaticInit64cb40cfdea8ef1d811401567b3f61b7
         array (
             0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/src',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Mpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
+        ),
+        'Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+        ),
         'FontLib\\' => 
         array (
             0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
@@ -58,6 +97,10 @@ class ComposerStaticInit64cb40cfdea8ef1d811401567b3f61b7
         'Dompdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
+        ),
+        'DeepCopy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
     );
 
@@ -74,9 +117,9 @@ class ComposerStaticInit64cb40cfdea8ef1d811401567b3f61b7
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit64cb40cfdea8ef1d811401567b3f61b7::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit64cb40cfdea8ef1d811401567b3f61b7::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit64cb40cfdea8ef1d811401567b3f61b7::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite1e8b8d58ed83aee5a6918d676d13770::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite1e8b8d58ed83aee5a6918d676d13770::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInite1e8b8d58ed83aee5a6918d676d13770::$classMap;
 
         }, null, ClassLoader::class);
     }

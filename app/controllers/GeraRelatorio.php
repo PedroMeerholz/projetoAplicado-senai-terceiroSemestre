@@ -37,7 +37,7 @@ class GeraRelatorio extends Relatorio
         $this->setInformacoes();
 
         $dompdf = new Dompdf();
-        $dompdf->setPaper('A4');
+    
         $dompdf->loadHtml(
             "<style>
                 body {
@@ -90,10 +90,13 @@ class GeraRelatorio extends Relatorio
                 <p>Relatório Gerado por: $this->usuario</p>
             </body>", 'UTF-8'
         );
+
+        $dompdf->setPaper('A4');
+
         $dompdf->render();
         ob_clean();
-        header('Content-type: application/pdf');
+        // header('Content-type: application/pdf');
         $dompdf->stream("Relatório - $this->dataRelatorio.pdf");
-        exit(0);
+        // exit(0);
     }
 }

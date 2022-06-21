@@ -35,60 +35,11 @@ class GeraRelatorio extends Relatorio
 
     public function montaRelatorio()
     {
-        $this->setInformacoes();
+        // $this->setInformacoes();
         
         $mpdf = new mPDF();
         $mpdf->WriteHTML(
-        "<style>
-                 body {
-                     margin-top: 5%; 
-                     margin-right: 15%; 
-                     margin-bottom: 5%; 
-                     margin-left: 15%; 
-                     text-align: center;
-                 }
-
-                 #informacoes-dos-chamados p {
-                     margin-bottom: 2%; 
-                     margin-left: 5%
-                 }
-
-                 hr {
-                     margin-top: 10%; 
-                     margin-bottom: 2%;
-                 }
-
-                 h1 {
-                     text-align: center;
-                     font-size: 28px;
-                     font-weight: bolder;
-                     margin-bottom: 4%;
-                 }
-
-                 #informacoes-dos-chamados {
-                     margin-bottom: 10%;
-                     text-align: center;
-                 }
-             </style>
-             <body>
-                 <div>
-                     <h1>Relatório de Chamados</h1>
-                     <p style='margin-left: 5%'>Data Inicial: $this->dataHoraInicial</p>
-                     <p style='margin-left: 5%'>Data Final: $this->dataHoraFinal</p>
-                 </div>
-                 <hr>
-                 <div id='informacoes-dos-chamados'>
-                     <h2>Informações dos chamados<br>dentro do período especificado</h2>
-                     <p>Número Total de Chamados: $this->totalDeChamados</p>
-                     <p>Distância Total Percorrida: $this->distanciaTotalPercorrida</p>
-                     <p>Média de Distância por Chamado: $this->mediaDistanciaPercorrida</p>
-                     <p>Total de CO2 emitido: $this->carbonoTotalEmitido</p>
-                     <p>Média de CO2 emitido por Chamado: $this->mediaCarbonoEmitido</p>
-                 </div>
-                 <hr>
-                 <p>Relatório Gerado em: $this->dataRelatorio</p>
-                 <p>Relatório Gerado por: $this->usuario</p>
-             </body>");
+        "hello");
         $mpdf->Output();
     }
 }

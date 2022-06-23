@@ -11,6 +11,9 @@ class Relatorio extends Conexao
         $dataHoraInicial = $_POST['entradaDataInicial'];
         $dataHoraFinal = $_POST['entradaDataFinal'];
 
+        $dataHoraInicial = str_replace('T', ' ', $dataHoraInicial);
+        $dataHoraFinal = str_replace('T', ' ', $dataHoraFinal);
+
         $informacoes = array(
             'dataHoraInicial' => $dataHoraInicial,
             'dataHoraFinal' => $dataHoraFinal

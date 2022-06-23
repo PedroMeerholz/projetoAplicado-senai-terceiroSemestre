@@ -19,7 +19,6 @@ class GeraRelatorio extends Relatorio
         $mediaDistanciaPercorrida = number_format($this->calculaMediaDistanciaPercorrida(), 2);
         $dataRelatorio = date('d-m-Y');
         $usuario = $_SESSION['nome'];
-
         require_once __DIR__ . '/../views/relatorio/relatorio.php';
     }
 }

@@ -3,6 +3,7 @@
 namespace app\models;
 
 use app\models\Conexao;
+use DivisionByZeroError;
 
 class Relatorio extends Conexao
 {
@@ -86,15 +87,24 @@ class Relatorio extends Conexao
     {
         $carbono = $this->calculaCarbonoEmitido();
         $totalChamados = $this->consultaTotalDeChamados();
-        $mediaCarbono =  $carbono / $totalChamados;
+        try {
+            $mediaCarbono =  $carbono / $totalChamados;
+            return $mediaCarbono;
+        } catch(DivisionByZeroError $e) {
+            $mediaCarbono =  0;
+            return $mediaCarbono;
+        }
 
-        return $mediaCarbono;
     }
     
     public function calculaMediaDistanciaPercorrida()
     {
-        $mediaDistancia = $this->calculaDistanciaPercorrida() / $this->consultaTotalDeChamados();
-        
-        return $mediaDistancia;
+        try {
+            $mediaDistancia = $this->calculaDistanciaPercorrida() / $this->consultaTotalDeChamados();
+            return $mediaDistancia;
+        } catch(DivisionByZeroError $e) {
+            $mediaDistancia = 0;
+            return $mediaDistancia;
+        }
     }
 }

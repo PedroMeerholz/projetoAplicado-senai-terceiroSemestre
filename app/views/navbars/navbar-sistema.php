@@ -41,7 +41,7 @@
 			<div class="item-navegacao dropdown">
 				<button class="dropbtn">Relatórios</button>
 				<div class="dropdowncontent">
-					<a href="?router=Pagina/geraRelatorio">Gerar Relatório</a>
+					<a href="?router=GeraRelatorio/geraRelatorio">Gerar Relatório</a>
 				</div>
 			</div>
             <div class="item-navegacao dropdown">

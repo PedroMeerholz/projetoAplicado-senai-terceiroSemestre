@@ -22,10 +22,10 @@
         <div id="informacoes-dos-chamados">
             <h1>Informações dos chamados<br>dentro do período especificado</h1>
             <p><b>Número Total de Chamados:</b> <?php echo $totalDeChamados?></p>
-            <p><b>Distância Total Percorrida:</b> <?php echo $distanciaTotalPercorrida ?></p>
-            <p><b>Média de Distância por Chamado:</b> <?php echo $mediaDistanciaPercorrida ?></p>
-            <p><b>Total de CO2 emitido:</b> <?php echo $carbonoTotalEmitido ?></p>
-            <p><b>Média de CO2 emitido por Chamado:</b> <?php echo $mediaCarbonoEmitido ?></p>
+            <p><b>Distância Total Percorrida:</b> <?php echo $distanciaTotalPercorrida?> Km</p>
+            <p><b>Média de Distância por Chamado:</b> <?php echo $mediaDistanciaPercorrida?> Km</p>
+            <p><b>Total de CO2 emitido:</b> <?php echo $carbonoTotalEmitido?> Kg</p>
+            <p><b>Média de CO2 emitido por Chamado:</b> <?php echo $mediaCarbonoEmitido?> Kg</p>
         </div>
         <hr>
         <p class="dados-geracao"><b>Relatório Gerado em:</b> <?php echo $dataRelatorio;?></p>

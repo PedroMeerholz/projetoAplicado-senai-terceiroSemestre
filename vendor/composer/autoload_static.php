@@ -7,7 +7,6 @@ namespace Composer\Autoload;
 class ComposerStaticInite1e8b8d58ed83aee5a6918d676d13770
 {
     public static $files = array (
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'ef7ca0904b63defd76e58ac67b0922b9' => __DIR__ . '/../..' . '/config/config.php',
     );
 
@@ -20,14 +19,6 @@ class ComposerStaticInite1e8b8d58ed83aee5a6918d676d13770
         array (
             'app\\' => 4,
         ),
-        'P' => 
-        array (
-            'Psr\\Log\\' => 8,
-        ),
-        'D' => 
-        array (
-            'DeepCopy\\' => 9,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -38,14 +29,6 @@ class ComposerStaticInite1e8b8d58ed83aee5a6918d676d13770
         'app\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
-        ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
-        'DeepCopy\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
     );
 

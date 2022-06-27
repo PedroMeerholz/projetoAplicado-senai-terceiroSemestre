@@ -1,0 +1,57 @@
+body {
+    font-family: 'Kanit', sans-serif;
+}
+
+#pagina {
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+}
+
+#botao-imprimir {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.botao-operacao {
+    margin-top: 30px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5%;
+    background-color: #308cca;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bolder;
+    margin-bottom: 4%;
+}
+
+#informacoes-do-relatorio, #informacoes-dos-chamados h1 {
+    text-align: center;
+}
+
+b {
+    font-weight: bolder;
+}
+
+hr {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#informacoes-dos-chamados p {
+    margin-bottom: 5%;
+}
+
+.dados-geracao {
+    text-align: center;
+    margin-bottom: 3%
+}

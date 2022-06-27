@@ -48,9 +48,9 @@ class ManterChamado extends Chamado
             echo "<script type='text/javascript'>
             function mostraMensagem(){
                 if(confirm('Chamado atualizado com sucesso')){
-                    window.location.href='?router=ManterChamado/aberturaChamado/';
+                    window.location.href='?router=ManterChamado/consultaChamado/';
                 } else {
-                    window.location.href='?router=ManterChamado/aberturaChamado/';
+                    window.location.href='?router=ManterChamado/consultaChamado/';
                 }
             }
             mostraMensagem();

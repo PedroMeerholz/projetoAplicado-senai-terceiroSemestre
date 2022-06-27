@@ -116,7 +116,7 @@ class Chamado extends Conexao
 
         if($status_chamado == 4)
         {
-            $this->chamaStoredProcedureChamadoFinalizado($id);
+            $this->procedureChamadoFinalizado($id);
             return true;
         } else if($status_chamado == 3) {
             return true;
@@ -160,24 +160,64 @@ class Chamado extends Conexao
     public function deleteChamado()
     {
         $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
-        $this->chamaStoredProcedureChamadoDeletado($id);
+        $this->procedureChamadoDeletado($id);
     }
 
-    public function chamaStoredProcedureChamadoFinalizado($id)
+    public function procedureChamadoFinalizado($id)
     {
         $conexao = $this->realizaConexao();
-        $stmt = $conexao->prepare('call `atualiza_status-chamado_finalizado`(?, ?);');
+
+        $this->alteraStatusFuncionarioAlocado($id);
+        $this->alteraStatusVeiculoAlocado($id);
+                
+        $stmt = $conexao->prepare('UPDATE chamado SET status_chamado=4 WHERE id_chamado=?;');
         $stmt->bindValue(1, $id);
-        $stmt->bindValue(2, 1);
         $stmt->execute();
     }
 
-    public function chamaStoredProcedureChamadoDeletado($id)
+    public function procedureChamadoDeletado($id)
     {
         $conexao = $this->realizaConexao();
-        $stmt = $conexao->prepare('call `atualiza_status-chamado_deletado`(?, ?);');
+        
+        $this->alteraStatusFuncionarioAlocado($id);
+        $this->alteraStatusVeiculoAlocado($id);
+
+        $stmt = $conexao->prepare('DELETE FROM chamado WHERE id_chamado=?;');
         $stmt->bindValue(1, $id);
-        $stmt->bindValue(2, 1);
         $stmt->execute();
+    }
+
+    private function alteraStatusFuncionarioAlocado($id)
+    {
+        $conexao = $this->realizaConexao();
+
+        $sql_idFuncionario = 'SELECT funcionario FROM chamado WHERE id_chamado=?;';
+        $stmt_idFuncionario = $conexao->prepare($sql_idFuncionario);
+        $stmt_idFuncionario->bindValue(1, $id);
+        $stmt_idFuncionario->execute();
+        $id_funcionario = $stmt_idFuncionario->fetch();
+        $id_funcionario = $id_funcionario['funcionario'];
+
+        $sql_updateFuncionario = 'UPDATE funcionario SET status_funcionario=1 WHERE id_funcionario=?;';
+        $stmt_idFuncionario = $conexao->prepare($sql_updateFuncionario);
+        $stmt_idFuncionario->bindValue(1, $id_funcionario);
+        $stmt_idFuncionario->execute();
+    }
+
+    private function alteraStatusVeiculoAlocado($id)
+    {
+        $conexao = $this->realizaConexao();
+
+        $sql_idVeiculo = 'SELECT veiculo FROM chamado WHERE id_chamado=?;';
+        $stmt_idVeiculo = $conexao->prepare($sql_idVeiculo);
+        $stmt_idVeiculo->bindValue(1, $id);
+        $stmt_idVeiculo->execute();
+        $id_veiculo = $stmt_idVeiculo->fetch();
+        $id_veiculo = $id_veiculo['veiculo'];
+
+        $sql_updateVeiculo = 'UPDATE veiculo SET status_veiculo=1 WHERE id_veiculo=?;';
+        $stmt_idFuncionario = $conexao->prepare($sql_updateVeiculo);
+        $stmt_idFuncionario->bindValue(1, $id_veiculo);
+        $stmt_idFuncionario->execute();
     }
 }

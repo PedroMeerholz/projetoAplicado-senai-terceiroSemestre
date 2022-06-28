@@ -6,9 +6,9 @@ use \PDOException;
 
 class Conexao
 {
-    private $nomeDataBase = 'mysql:host=localhost;dbname=projetosenai';
-    private $usuario = 'root';
-    private $senha = '';
+    private $nomeDataBase = 'mysql:host=database-projetoaplicado.cn1rl4lmn61c.us-east-1.rds.amazonaws.com;dbname=projetosenai';
+    private $usuario = 'admin';
+    private $senha = '89601311';
 
     public function realizaConexao()
     {

@@ -16,17 +16,21 @@
             <?php foreach($edita as $registro_chamado):?>
                 <input type="hidden" name="id" value="<?php echo $registro_chamado['id_chamado']?>">
                 <label for="entradaDistanciaChamado">Distância:</label>
-                <input type="number" name="entradaDistanciaChamado" id="entradaDistanciaChamado" placeholder="25.2" step="0.01"value="<?php echo $registro_chamado['distancia'];?>" autofocus required> Km
+                <input type="number" name="entradaDistanciaChamado" id="entradaDistanciaChamado" placeholder="25.2" step="0.01" value="<?php echo $registro_chamado['distancia'];?>" autofocus required> Km
                 <br>
                 <label for="entradaStatusChamado">Status:</label>
                 <select name="entradaStatusChamado" id="entradaStatusChamado" required>
-                    <optgroup name="status">
-                        <option value="" selected disabled></option>
-                        <option value="3">Em Aberto</option>
+                    <?php if($registro_chamado['status_chamado'] == 'Em Aberto'):?>
+                        <option value="" disabled></option>
+                        <option value="3" selected>Em Aberto</option>
                         <option value="4">Finalizado</option>
-                    </optgroup>
+                    <?php endif;?>
+                    <?php if($registro_chamado['status_chamado'] == 'Finalizado'):?>
+                        <option value="" disabled></option>
+                        <option value="3">Em Aberto</option>
+                        <option value="4" selected>Finalizado</option>
+                    <?php endif;?>
                 </select>
-                Status Atual: <?php echo $registro_chamado['status_chamado']?>
             <?php endforeach;?>
         </div>
         <div class="botoes">

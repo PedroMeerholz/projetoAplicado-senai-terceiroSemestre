@@ -24,6 +24,24 @@ h1 {
     margin-bottom: 20px;
 }
 
+.entrada-informacoes label {
+    display: block;
+    width: 20%;
+    float: left;
+}
+
+.entrada-informacoes {
+    padding-left: 7%;
+}
+
+.entrada-informacoes input {
+    width: 530px;
+}
+
+.entrada-informacoes select {
+    width: 532px;
+}
+
 .botoes {
     display: flex;
     justify-content: space-evenly;
@@ -35,7 +53,7 @@ h1 {
     padding-bottom: 5px;
     background-color: #308cca;
     border: none;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     color: white;
     font-weight: bolder;
     transition: 1s;

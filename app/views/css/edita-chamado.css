@@ -6,20 +6,44 @@ h1 {
     margin-left: 10%;
 }
 
-.box-principal {
-    margin-left: 10%;
-    margin-right: 10%;
+.formulario {
+    margin-left: 15%;
+    margin-right: 15%;
     text-align: left;
     border-radius: 3px;
     background-color: #e0e0e0;
 }
 
-.campos-fechar-chamado {
+.box-principal {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.entrada-informacoes {
     padding: 30px;
 }
 
-input  {
+.cadastro input, select{
     margin-bottom: 20px;
+}
+
+.entrada-informacoes label {
+    display: block;
+    width: 20%;
+    float: left;
+}
+
+.entrada-informacoes {
+    padding-left: 10%;
+}
+
+.entrada-informacoes input {
+    width: 435px;
+}
+
+.entrada-informacoes select {
+    width: 443px;
 }
 
 .botoes {
@@ -31,9 +55,9 @@ input  {
     width: 30%;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-bottom: 20px;
     background-color: #308cca;
     border: none;
-    border-radius: 3px;
     color: white;
     font-weight: bolder;
     transition: 1s;

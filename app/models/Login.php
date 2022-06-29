@@ -65,10 +65,6 @@ class Login extends Conexao
         $stmt->execute();
         $resultado = $stmt->fetch();
 
-        echo $senha;
-        echo '<br>';
-        echo $resultado['senha'];
-
         if(password_verify($senha, $resultado['senha']))
         {
             echo $resultado['senha'];

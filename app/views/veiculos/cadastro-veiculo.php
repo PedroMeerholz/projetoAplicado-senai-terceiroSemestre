@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./app/views/css/formularios.css">
 </head>
 <body>
-<h1>Cadastro de Veículos</h1>
+	<h1>Cadastro de Veículos</h1>
 	<div class="formulario-cadastro">
 		<form action="?router=ManterVeiculo/registrarVeiculo/" method="post" class="cadastro">
 			<label for="entradaPlacaVeiculo">Placa:</label>
@@ -45,11 +45,9 @@
 			<br>
 			<div class="botoes">
 				<input type="submit" value="Confirmar" class="botao-operacao" id="botao-confirmar" name="enviaInformacoes">
-				<input type="button" value="Limpar Campos" class="botao-operacao" name="limpaCampos" onclick="location.reload()">
+				<input type="button" value="Cancelar" class="botao-operacao" onclick="location.href='?router=HomeDashboard/home/'">
 			</div>
 		</form>
 	</div>
-	<script type="module" src="/src/js/veiculos/validacao-cadastro-veiculos.js"></script>
-	<script type="module" src="/src/js/veiculos/confirmacao-dados.js"></script>
 </body>
 </html>

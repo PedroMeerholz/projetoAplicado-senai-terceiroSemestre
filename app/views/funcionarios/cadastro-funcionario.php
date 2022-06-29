@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./app/views/css/formularios.css">
 </head>
 <body>
-<h1>Cadastro de Funcionários</h1>
+	<h1>Cadastro de Funcionários</h1>
 	<div class="formulario-cadastro">
 		<form action="?router=ManterFuncionario/registrarFuncionario/" method="post" class="cadastro" >
 			<label for="entradaNomeFuncionario">Nome Completo:</label>
@@ -47,7 +47,7 @@
 			<br>
 			<div class="botoes">
 				<input type="submit" value="Confirmar" id="botao-confirmar" class="botao-operacao" name="enviaInformacoes">
-				<input type="button" value="Limpar Campos" class="botao-operacao" name="limpaCampos" onclick="location.reload()">
+				<input type="button" value="Cancelar" class="botao-operacao" onclick="location.href='?router=HomeDashboard/home/'">
 			</div>
 		</form>
 	</div>

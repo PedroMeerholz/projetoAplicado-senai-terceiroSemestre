@@ -10,11 +10,11 @@
 	<link rel="stylesheet" href="./app/views/css/formularios.css">
 </head>
 <body>
-<h1>Editar Funcionário</h1>
-	<div class="formulario-cadastro">
-		<form action="?router=ManterFuncionario/alterarRegistroFuncionario/" method="post" class="cadastro" >
+    <h1>Editar Funcionário</h1>
+    <div class="formulario-cadastro">
+        <form action="?router=ManterFuncionario/alterarRegistroFuncionario/" method="post" class="cadastro" >
             <?php foreach($edita as $registro):?>
-			    <input type="hidden" name="id" value="<?php echo $registro['id_funcionario']?>">
+                <input type="hidden" name="id" value="<?php echo $registro['id_funcionario']?>">
                 <label for="entradaNomeFuncionario">Nome Completo:</label>
                 <input type="text" name="entradaNomeFuncionario" id="entradaNomeFuncionario" placeholder="João da Silva" value="<?php echo $registro['nome'];?>" autofocus required>
                 <br>
@@ -84,10 +84,10 @@
                 <br>
                 <div class="botoes">
                     <input type="submit" value="Confirmar" id="botao-confirmar" class="botao-operacao" name="enviaInformacoes">
-                    <input type="reset" value="Limpar Campos" class="botao-operacao" name="limpaCampos">
+                    <input type="reset" value="Cancelar" class="botao-operacao" onclick="location.href='?router=ManterFuncionario/consultaFuncionario/'">
                 </div>
             <?php endforeach;?>
-		</form>
-	</div>
+        </form>
+    </div>
 </body>
 </html>

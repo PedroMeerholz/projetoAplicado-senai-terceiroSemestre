@@ -10,9 +10,9 @@
 	<link rel="stylesheet" href="./app/views/css/formularios.css">
 </head>
 <body>
-<h1>Editar Veículo</h1>
-	<div class="formulario-cadastro">
-		<form action="?router=ManterVeiculo/alterarRegistroVeiculo/" method="post" class="cadastro">
+    <h1>Editar Veículo</h1>
+    <div class="formulario-cadastro">
+        <form action="?router=ManterVeiculo/alterarRegistroVeiculo/" method="post" class="cadastro">
             <?php foreach($edita as $registro):?>
                 <input type="hidden" name="id" value="<?php echo $registro['id_veiculo']?>">
                 <label for="entradaPlacaVeiculo">Placa:</label>
@@ -91,10 +91,10 @@
                 <br>
                 <div class="botoes">
                     <input type="submit" value="Confirmar" id="botao-confirmar" class="botao-operacao" name="enviaInformacoes">
-                    <input type="reset" value="Limpar Campos" class="botao-operacao" name="limpaCampos">
+                    <input type="reset" value="Cancelar" class="botao-operacao" onclick="location.href='?router=ManterVeiculo/consultaVeiculo/'">
                 </div>
             <?php endforeach;?>
-		</form>
-	</div>
+        </form>
+    </div>
 </body>
 </html>

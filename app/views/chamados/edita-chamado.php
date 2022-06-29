@@ -35,7 +35,7 @@
         </div>
         <div class="botoes">
             <input type="submit" value="Confirmar" id="botao-confirmar" class="botao-operacao" name="enviaInformacoes">
-            <input type="reset" value="Limpar Campos" class="botao-operacao" name="limpaCampos">
+            <input type="reset" value="Cancelar" class="botao-operacao" onclick="location.href='?router=ManterChamado/consultaChamado/'">
         </div>
 	</form>
 </body>

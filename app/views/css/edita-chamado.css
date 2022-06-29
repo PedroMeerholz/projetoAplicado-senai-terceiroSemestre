@@ -2,13 +2,13 @@ h1 {
     font-weight: bolder;
     font-size: 25px;
     margin-top: 5%;
-    margin-left: 10%;
     margin-bottom: 2%;
+    margin-left: 10%;
 }
 
 .box-principal {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
     text-align: left;
     border-radius: 3px;
     background-color: #e0e0e0;
@@ -18,13 +18,8 @@ h1 {
     padding: 30px;
 }
 
-.campos-fechar-chamado input {
+input  {
     margin-bottom: 20px;
-}
-
-.botoes {
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .botoes {

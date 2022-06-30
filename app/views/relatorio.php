@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>SMEC - Gerar Relatório</title>
+    <title>SMEC | Gerar Relatório</title>
     <link rel="stylesheet" href="./app/views/css/reset.css">
     <link rel="stylesheet" href="./app/views/css/generico.css">
     <link rel="stylesheet" href="./app/views/css/relatorios.css">

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SMEC - Cadastro de Funcionários</title>
+	<title>SMEC | Cadastro de Funcionários</title>
 	<link rel="icon" type="image/x-icon" href="/img/logo.png">
 	<link rel="stylesheet" href="./app/views/css/reset.css">
 	<link rel="stylesheet" href="./app/views/css/generico.css">

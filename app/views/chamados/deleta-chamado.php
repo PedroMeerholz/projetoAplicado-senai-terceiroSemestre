@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMEC - Remover Registro</title>
+    <title>SMEC | Remover Registro</title>
     <link rel="stylesheet" href="./app/views/css/reset.css">
     <link rel="stylesheet" href="./app/views/css/remover-registro.css">
 </head>

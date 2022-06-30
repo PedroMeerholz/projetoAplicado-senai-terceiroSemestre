@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SMEC - Abertura de Chamados</title>
+	<title>SMEC | Abertura de Chamados</title>
 	<link rel="icon" type="image/x-icon" href="/src/img/logo.png">
 	<link rel="stylesheet" href="./app/views/css/reset.css">
 	<link rel="stylesheet" href="./app/views/css/generico.css">

@@ -53,3 +53,31 @@ h1 {
 .informacoes-especificas-direita {
     float: right;
 }
+
+.info-funcionarios .parametro-dashboard {
+    display: block;
+    float: left;
+    width: 63%;
+}
+
+.info-veiculos .parametro-dashboard {
+    display: block;
+    float: left;
+    width: 53%;
+}
+
+.info-chamados .parametro-dashboard {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.info-carbono .parametro-dashboard {
+    display: block;
+    float: left;
+    width: 65%;
+}
+
+.dados-dashboard {
+    padding-bottom: 2%;
+}

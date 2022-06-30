@@ -16,36 +16,48 @@
     </div>
     <div class="informacoes-gerais">
         <h1>Informações Gerais</h1>
-        <div class="informacoes-especificas informacoes-especificas-esquerda">
+        <div class="informacoes-especificas informacoes-especificas-esquerda info-funcionarios">
             <h2>Funcionários</h2>
             <br>
-            <p>N° de Funcionários: <?php echo $total_funcionarios?></p>
-            <p>Funcionários Disponíveis: <?php echo $funcionarios_disponiveis?></p>
-            <p>Funcionários Indisponíveis: <?php echo $funcionarios_indisponiveis?></p>
+            <p class="parametro-dashboard">N° de Funcionários: </p>
+            <p class="dados-dashboard"><?php echo $total_funcionarios?></p>
+            <p class="parametro-dashboard">Funcionários Disponíveis: </p>
+            <p class="dados-dashboard"><?php echo $funcionarios_disponiveis?></p>
+            <p class="parametro-dashboard">Funcionários Indisponíveis: </p>
+            <p class="dados-dashboard"><?php echo $funcionarios_indisponiveis?></p>
         </div>
-        <div class="informacoes-especificas informacoes-especificas-direita">
+        <div class="informacoes-especificas informacoes-especificas-direita info-veiculos">
             <h2>Veículos</h2>
             <br>
-            <p>N° de Veículos: <?php echo $total_veiculos?></p>
-            <p>Veículos Disponíveis: <?php echo $veiculos_disponiveis?></p>
-            <p>Veículos Indisponíveis: <?php echo $veiculos_indisponiveis?></p>
+            <p class="parametro-dashboard">N° de Veículos: </p>
+            <p class="dados-dashboard"><?php echo $total_veiculos?></p>
+            <p class="parametro-dashboard">Veículos Disponíveis: </p>
+            <p class="dados-dashboard"><?php echo $veiculos_disponiveis?></p>
+            <p class="parametro-dashboard">Veículos Indisponíveis: </p>
+            <p class="dados-dashboard"><?php echo $veiculos_indisponiveis?></p>
         </div>
-        <div class="informacoes-especificas informacoes-especificas-esquerda">
+        <div class="informacoes-especificas informacoes-especificas-esquerda info-chamados">
             <h2>Chamados</h2>
             <br>
-            <p>N° de Chamados: <?php echo $total_chamados?></p>
-            <p>Chamados Abertos: <?php echo $chamados_abertos?></p>
-            <p>Chamados Fechados: <?php echo $chamados_finalizados?></p>
+            <p class="parametro-dashboard">N° de Chamados: </p>
+            <p class="dados-dashboard"><?php echo $total_chamados?></p>
+            <p class="parametro-dashboard">Chamados Abertos: </p>
+            <p class="dados-dashboard"><?php echo $chamados_abertos?></p>
+            <p class="parametro-dashboard">Chamados Fechados: </p>
+            <p class="dados-dashboard"><?php echo $chamados_finalizados?></p>
         </div>
-        <div class="informacoes-especificas informacoes-especificas-direita">
+        <div class="informacoes-especificas informacoes-especificas-direita info-carbono">
             <h2>Carbono</h2>
             <br>
-            <p>Carbono emitido(Kg): <?php echo $carbono_emitido?></p>
+            <p class="parametro-dashboard">Carbono emitido(Kg): </p>
+            <p class="dados-dashboard"><?php echo $carbono_emitido?></p>
             <?php foreach($maior_veiculo_emissor as $resultado):?>
-                <p>Veículo que mais emitiu: <?php echo $resultado['veiculo']?>(<?php echo $resultado['carbono']?> Kg)</p>
+                <p class="parametro-dashboard">Veículo que mais emitiu: </p>
+                <p class="dados-dashboard"><?php echo $resultado['veiculo']?></p>
             <?php endforeach;?>
             <?php foreach($maior_funcionario_emissor as $resultado):?>
-                <p>Funcionário que mais emitiu: <?php echo $resultado['funcionario']?>(<?php echo $resultado['carbono']?> Kg)</p>
+                <p class="parametro-dashboard">Funcionário que mais emitiu: </p>
+                <p class="dados-dashboard"><?php echo $resultado['funcionario']?></p>
             <?php endforeach;?>
         </div>
     </div>

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>SMEC - Login</title>
+    <title>SMEC | Login</title>
     <link rel="shortcut icon" href="/src/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./app/views/css/reset.css">
     <link rel="stylesheet" href="./app/views/css/login.css">

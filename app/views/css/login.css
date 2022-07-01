@@ -91,3 +91,7 @@ body {
     background-color: #004a81;
     transition: 1s;
 }
+
+.detalhes h1 {
+    margin-bottom: 5%;
+}

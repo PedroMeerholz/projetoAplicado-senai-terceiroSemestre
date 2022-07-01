@@ -45,7 +45,7 @@
 				</div>
 			</div>
             <div class="item-navegacao dropdown">
-                <button class="dropbtn">Ajuda</button>
+                <button class="dropbtn">Suporte</button>
                 <div class="dropdowncontent">
                     <a href="?router=Manual/manual/">Documentação</a>
                 </div>

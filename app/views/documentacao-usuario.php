@@ -11,12 +11,12 @@
     <div class="documento">
         <div class="cabecalho">
             <fieldset class="titulos-iniciais">
-                <h1>SMEC - Sistema de Monitoramento de Emissão de Carbono</h1>
                 <h2>Manual do Usuário</h2>
                 <h3>V1.0</h3>
             </fieldset>
         </div>
         <div class="sumario">
+            <h2>Sumário</h2>
             <ol>
                 <li>Introdução</li>
                 <li>Primeiros Passos para Utilizar o Sistema</li>
@@ -50,6 +50,7 @@
                     <li>Obter Relatório</li>
                 </ol>
             </ol>
+            <hr>
         </div>
         <div class="introducao">
             <h2>Introdução</h2>
@@ -57,6 +58,7 @@
                 Este documento serve para auxiliar um usuário no processo de utilização do SMEC, o Sistema de Monitoramento de Emissões de Carbono.
                 Dentro deste breve documento estarão instruções de como utilizar o sistema da forma planejada.
             </p>
+            <hr>
         </div>
         <div class="primeiros-passos">
             <h2>Primeiros Passos</h2>
@@ -79,9 +81,10 @@
                 Caso siga corretamente os 3 passos, é só começar a utilizar o sistema.
                  Caso esteja ainda com dúvidas de como utilizar o sistema, continue lendo o documento.
             </p>
+            <hr>
         </div>
         <div class="barra-navegacao">
-            <h2>Navegação do Sistema</h2>
+            <h2>Navegação do Sistema e suas Páginas</h2>
             <p>
                 A barra de navegação fica no topo da página. Caso não apareça, favor contatar a equipe de TI, mas caso ela apareça corretamente, ela deve conter esses botões… (Porém podem não estar presentes caso a empresa tenha decidido customizar a página.)
             </p>
@@ -94,7 +97,7 @@
             <p>
                 Esta página contém algumas informações bem gerais, porém seu conteúdo pode variar dependendo da empresa, podendo ser customizado para ter outras informações.
             </p>
-
+            <hr class="hr-interna">
             <h3>Botão de Funcionários</h3>
             <h4>Como usar…</h4>
             <p>
@@ -148,6 +151,7 @@
             A página de edição é similar a página de cadastro, e dessa forma, segue as mesmas regras que a página de cadastro. (Regras sendo 'mínimo de 6 letras’, sem caracteres especiais, etc.)
             O botão de exclusão lhe levará para uma página de confirmação.
             </p>
+            <hr class="hr-interna">
             <h3>Botão de Veículos</h3>
             <h4><strong>Como usar...</strong></h4>
             <p>
@@ -174,6 +178,7 @@
                 A página de edição é similar a página de cadastro, e dessa forma, segue as mesmas regras que a página de cadastro. (Regras sendo 'mínimo de 6 letras', sem caracteres especiais, etc.)
                 O botão Editar irá abrir uma página de edição com as informações do veículo selecionado, enquanto o botão de exclusão lhe levará para uma página de confirmação.
             </p>
+            <hr class="hr-interna">
             <h3>Botão de Chamados</h3>
             <h4><strong>Como usar…</strong></h4>
             <p>
@@ -202,10 +207,10 @@
             <p>
                 O botão de exclusão irá remover o chamado.
             </p>
+            <hr class="hr-interna">
             <h3>Botão de Relatórios</h3>
             <h4>Como usar…</h4>
-            <p>O botão de relatórios funcionará da mesma forma que todos os anteriores, em que, ao passar o mouse, ele revela opções.</p>
-            <p>No caso do botão de relatório, só tem uma opção, que é a de gerar relatório.</p>
+            <p>O botão de relatórios funcionará da mesma forma que todos os anteriores, em que, ao passar o mouse, ele revela opções. No caso do botão de relatório, só tem uma opção, que é a de gerar relatório.</p>
             <p>Para gerar um relatório, é necessário preencher os campos do formulário.</p>
             <p>Os campos existentes na página são…</p>
             <p><strong>Data de início -</strong> Deve ser preenchido com o período inicial.</p>
@@ -213,9 +218,6 @@
             <p>Um relatório válido seria…</p>
             <p>Data de início - 30/06/2001 (DE)</p>
             <p>Data final - 05/08/2001 (ATÉ)</p>
-            <p><strong>Final do documento.</strong></p>
-            <p><strong>Esqueceu a senha?</strong></p>
-            <p><strong>Contate o administrador.</strong></p>
         </div>
     </div>
 </body>

@@ -1,0 +1,48 @@
+.documento {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bolder;
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bolder;
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: bolder;
+    padding-bottom: 1%;
+}
+
+ul {
+    padding-left: 2%;
+    list-style: decimal;
+}
+
+ol {
+    padding-left: 2%;
+    list-style: disc; 
+}
+
+ol li {
+   padding-bottom: 1%; 
+}
+
+strong {
+    font-weight: bolder;
+}

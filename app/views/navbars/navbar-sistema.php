@@ -45,6 +45,12 @@
 				</div>
 			</div>
             <div class="item-navegacao dropdown">
+                <button class="dropbtn">Ajuda</button>
+                <div class="dropdowncontent">
+                    <a href="?router=Manual/manual/">Documentação</a>
+                </div>
+            </div>
+            <div class="item-navegacao dropdown">
                 <button class="dropbtn">Sair</button>
                 <div class="dropdowncontent">
                     <a href="?router=Sessao/encerrarSessao/">Encerrar Sessão</a>
